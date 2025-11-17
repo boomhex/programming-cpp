@@ -1,0 +1,358 @@
+*Carefully* read the following:
+
+0: This text can also be downloaded from
+
+        https://www.icce.rug.nl/edu/X/cpp/submitinfo.txt
+
+    where X is replaced by the course's part number (1, 2, or 3)
+
+   At the end of this file a summary of the essential steps is provided.
+
+   If anything is unclear, or if something doesn't seem to work, contact
+   Frank, while providing information about:
+
+        - what you did (including the info you sent to the mailhandler),
+        - the time you did it
+        
+   Also, when submitting exercises keep the zip (see below) containing the
+   exercises, at least until you've rceived the rated exercises: if anything
+   is incorrect then we'll have a chance to see what went wrong. 
+
+---------------------------------------------------------------------------
+1. Exercises MUST be submitted per set.
+
+    You *can* submit subsets of exercises, but we REALLY appreciate it if
+    you submit all of your exercises of a set in one e-mail.
+
+    Do NOT submit exercises of multiple sets in one e-mail.
+
+------------------------------------------------------------------------
+2. Source files are files having the extension .cc or .cpp
+
+    Header files can be included in the constructed pdf file as well, and 
+    must have extensions .h, .hh, or .hpp
+    Internal header files have by default the extension .ih.
+    Inline implemented functions can be included in header and/or internal
+    header files, but may also be defined in separate files, which are then
+    included in the header/internal header files. Those file by default have
+    the extension .i, but their extension is configurable (cf. item 7).
+
+------------------------------------------------------------------------
+3. All source files MUST compile OK, i.e., without any warnings. 
+
+    Submitted source files are compiled by the latest available version of the
+    Gnu g++ compiler (see http://www.icce.rug.nl/edu/ for the currently used
+    version), using the options
+
+        --std=c++26 -Wall -Werror
+
+    Consequently, warnings are considered errors.
+
+    Source files are only compiled. Object files are not used (e.g., they are
+    not linked to build a program.
+
+------------------------------------------------------------------------
+4. All files associated with your exercises must be submitted in a
+    zip-file. 
+
+    Filenames may consist of letters, digits, underscores, optionally followed
+    by a dot and a (standard, see item 2) extension. The zip itself should
+    preferably be named after the set you're submitting. E.g., set1.zip,
+    set2.zip etc.
+
+------------------------------------------------------------------------
+5. The zip itself MUST be organized like this:
+    
+  * At the zip's top-level a file
+        
+        metadata.txt
+
+    MUST exist.
+
+  * Other than that, the top-level may ONLY contain subdirectories, named
+    after the exercise numbers. So if you're submitting exercises 12, 13, 14
+    and 15 the zip's top-level contains
+
+        metadata.txt
+        12/
+        13/
+        14/
+        15/
+
+    * if other files or other directories are present in the zip file your
+      submission is rejected
+
+------------------------------------------------------------------------
+6.  The metadata.txt file:
+
+    The metadata.txt file MUST contain a line like:
+
+        Set:  Set 1
+
+    The initial 'Set:' is required, the rest should be like the example, but
+      use the appropriate set number. There are no specific requirements
+      for the text following 'Set:', just make sure that you specify the
+      number of the set your submission is about.
+
+    It must also MUST contain the line
+
+        Authors: 
+    or 
+        Author:
+
+    followed by the names of the group members who submitted the exercises.
+    Don't just use your first names, because that may be confusing, but also
+    specify last (family) names. So, instead of (as an example) 
+
+        Authors: Jurjen, Frank 
+    use
+        Authors: Jurjen Bokma, Frank Brokken
+
+    Just use first and last names, don't specify all middle names your group
+    members may have.
+
+    The metadata.txt file MAY contain a line
+
+        Rater:
+
+    followed by the initials indicating the initial rater (either JB (Jurjen),
+    FB (Frank), AI (Andrei), ES (Efe), or HB (Hans)). The 'Rater:' line must
+    be used when resubmitting exercises so the initial rater receives your
+    resubmission. Sometimes the initially assigned rater sends you a request
+    to resubmit after a minor modification. In that case you should *also*
+    specify the initially assigned rater.
+
+    NOTE: if, when resubmitting, you don't specify the initial rater then a
+    rater is assigned by the mail handler. That rater may rate your exercises,
+    but then the exercises are rated as a first submission, not considering
+    the advice you may have received from the initial rater. If that happens
+    then you've used your resubmission option, and the newly assigned rater
+    may use slightly different rating accents. Morale: make double sure that
+    you specify the initial rater when resubmitting.
+   
+------------------------------------------------------------------------
+7.  EACH exercise directory MUST contain a file
+
+        order.txt
+
+    The order.txt file specifies the order in which you want the files to
+    appear in the final .pdf and specifies the source files the mailhandler
+    should compile.
+
+    Empty lines in order.txt files are OK, but its lines may NOT contain
+    comment.
+
+    The first line in order.txt files can be used to change the extension of
+    files defining inline functions. By default the extension .i is used. To
+    change the default specify the extension between square brackets. Some
+    examples:
+
+        [.f] 
+        [.inl]
+
+    Entries in order.txt files may be prefixed by '-' characters. E.g.,
+        -dir/fun.cc
+        -main.cc
+    This is convenient when exercises require you to submit subsets of
+    sources: filenames to which a '-' character is prefixed are not compiled,
+    and won't appear in the constructed .pdf files.
+
+    Entries in order.txt files may also be prefixed by '+' characters. E.g.,
+    +parser/grammar This is primarily used in part III of the C++ course where
+    parser and scanner specification files are used: such files are not
+    compiled but they appear in the constructed .pdf using the same
+    type-setting as used for source files. E.g.,
+        descr1.txt
+        +parser/grammar
+        -main.ih
+        main.cc
+
+    File specifications in order.txt may NOT refer to parent or absolute
+    directories (specifications can't start with ./ ../ or /) and MUST specify
+    files located in the exercise's directory or in a one-level deep
+    subdirectory. E.g,
+        description.txt
+        class/class1.cc
+        main.cc
+
+    Note: '#include' directives in header files *may* refer to headers
+    located in a relative location. E.g., if 62/data/data.h is present in the
+    zip, then 63/main.ih *could* specify
+        #include "../62/data/data.h"
+    but don't use relative #include specifications referring to files outside
+    of the zip's top level directory, as such files may not exist at the
+    mailhandler's site.
+
+    If an exercise directory contains subdirectories then the files in those
+    subdirectories must be listed next to each other (i.e., 'clustered') in
+    the order.txt file. The files in exercise's directory itself must also be
+    clustered in the order.txt file
+
+    The files specified in each cluster must be organized as follows:
+
+    * When specifying a header file then it must be specified first. 
+    * If there's an internal header file then that file must be specified
+      next (or first if there is no header file) 
+      (sometimes you only need a single header file: see item 8 for that 
+       situation). 
+    * Inline function specification files may be specified immediately
+      following a header and/or an internal header file specification. E.g.,
+        class/class.h
+        class/class.i
+        class/class.ih
+        class/private.i
+      Note that using an inline function specification file is not a
+      requirement: inline function can *also* be defined in (internal) header
+      files themselves.
+    * If an exercise directory contains a main.cc file then it must be
+      specified last.
+    
+    Other files must have the extension .txt, and must be plain ASCII
+    text files. Multiple .txt files may be specified in order.txt files, and
+    to .txt files the clustering requirement does not apply. 
+    Their content will appear in the final .pdf at the point where they are
+    specified. E.g., if order.txt contains
+        descr1.txt
+        class/class.h
+        descr2.txt
+        class/class1.cc
+        main.ih
+        descr3.txt
+        main.cc
+    then decr1.txt is shown first in the .pdf; descr2.txt is shown after the
+    class.h header; descr3.txt is shown after main.ih. It's also ok to specify
+    .txt files in subdirectories. So descr2.txt could also be located in the
+    class subdirectory. In that case the following specification is used:
+        class/descr2.txt
+
+    You don't have to pay attention to the layout of .txt files: they are
+    processed by LaTeX. LaTeX formats long lines, using a line length of
+    slightly more than 90 characters, and starts a new line after each line
+    read from those .txt files.
+
+    Files in exercise (sub)directories which are not specified in order.txt
+    file may not be included in the submitted zip file.  Here is an example of
+    the content of an order.txt file as used in a demo-zip file, which can be
+    downloaded from 
+        https://www.icce.rug.nl/edu/X/cpp/strings.zip
+    where X is the course part number (so 1, 2, or 3):
+
+descr.txt
+strings/strings.h
+strings/strings.ih 
+strings/strings5.cc       
+strings/add.cc            
+strings/enlargebymove.cc  
+strings/safeat.cc         
+strings/destroy.cc
+strings/enlargebycopy.cc  
+strings/iterate.cc
+
+main.ih
+main.cc
+
+------------------------------------------------------------------------
+8. Sometimes a class must include a previously developed header file which is
+    *not* required by the set's exercises, but is *only* required for
+    compiling the sources of an exercise. E.g., in a previous set you created
+    a file enums/enums.h which is required by a class (e.g., in 3/tokenizer)
+    that you're submitting.
+
+    Such a header file must be added to your zip to inform the compiler about
+    the (elsewhere) existence of the components which are declared in that
+    header file. 
+
+    As the implementations of those components are not required by the
+    exercise you provide that header file as the *only* file in a separate
+    sub-directory of the exercise (so for enums/enums.h used by 3/tokenizer
+    you provide it in 3/enums/enums.h.
+
+    That header file, which is merely required to satisfy the compiler must be
+    included in the exercise's .zip, but it's *not* mentioned in 3/order.txt
+    because it's *not* part of the exercise itself.
+
+    Example:
+        3/order.txt     - lists the source files and .txt files that you are 
+                          submitting in this exercise. E.g., the files in the
+                          directory 'tokenizer'
+
+        3/tokenizer/    - contains all files of the class Tokenizer,
+                          required by the exercise
+
+        3/enums/        - merely contains enums.h: enums.h is required
+                          when compiling the sources of the Tokenizer where
+                          its tokenizer.ih (or tokenizer.h) header file
+                          contains the directive
+                            #include "../enums/enums.h"
+
+------------------------------------------------------------------------
+9. Once you have created a .zip, the exercises can be submitted to
+
+        submit@icce.rug.nl
+
+    You can ONLY submit exercises from the address(es) you used when
+    registering for the C++ course. 
+
+    The e-mail's Subject: can be the name of your submitted
+    set. Alternatively, if the Subject: is 
+
+        pdf
+
+    then *nothing* is submitted but the .pdf is constructed which is then
+    returned to the sender for inspection. Make sure you fix layout errors in
+    the .pdf (especially lines that are too long) before actually submitting
+    your exercises.
+
+    The e-mail's text is irrelevant, but the mail must have one attachment
+    containing the zip-file.
+
+---------------------------------------------------------------------------
+10. If all's well (i.e., the submitted exercises were received in good order
+    you receive a confirmation (usually it is sent within 5 minutes after
+    submitting an e-mail). 
+
+    If something went wrong, you receive an e-mail telling you what went
+    wrong.
+
+    If you used another e-mail address than the one you used for registering
+    for this course then your submission is simply ignored, and you receive no
+    reply.
+
+
+---------------------------------------------------------------------------
+11. We (Jurjen, Frank, Anrei, Efe, Hans) receive your work as the .zip
+    file, containing the .pdf document. For an illustration of what a .pdf
+    looks like given the abovementioned zip file's contents. see
+
+        https://www.icce.rug.nl/edu/X/cpp/strings.pdf
+
+---------------------------------------------------------------------------
+12. Summary:
+
+    1. Construct a setX.zip (see items 1..8), with X being the set-number
+
+        metadata.txt must contain at least
+
+            Set: Set X
+            Authors: comma-separated list of names of the group members who
+                     submitted the exercises
+
+        Directories below the top level contain 'order.txt' listing the files
+        that should be included in the .pdf document. These files should be
+        source files (.cc, .cpp), header files (.h, .ih, .hh, .hpp), inline
+        function defining files (.i) or text files (.txt), and they are
+        printed in the order they are listed in order.txt.
+
+    2. Send the .zip (as attachment) to submit@icce.rug.nl using as subject
+       either the name of the submitted set, or merely the word 
+
+            pdf
+
+---------------------------------------------------------------------------
+13. Finally, in case you're interested, the mailhandler's sources are
+    available from (after replacing X bij the course's number (1, 2, or 3):
+
+        https://www.icce.rug.nl/edu/X/cpp/mailhandler.tgz
+
+    They may be updated every now and then, so don't assume that what you
+    download at some point contains the mailhandlers most recent source files.
