@@ -10,6 +10,8 @@ class Numbers
     int *d_nums = 0;
 
     public:
+        friend bool operator==(Numbers const &lhs,      // equal.cc
+                               Numbers const &rhs);
         explicit Numbers(size_t size);
     
         Numbers(size_t size, int value);
@@ -28,23 +30,23 @@ class Numbers
         int &operator[](size_t index);                  // operindex1.cc
         int const &operator[](size_t index)  const;     // operindex2.cc
 
-        friend bool operator==(Numbers const &lhs,      // equal.cc
-                               Numbers const &rhs);
-        friend bool operator!=(Numbers const &lhs,      // inline
-                               Numbers const &rhs);
-
     private:
         // support members for this class, if any
-        int &operatorIndex(size_t index)  const;
+        int &opIdx(size_t index)  const;
         void boundary(size_t index) const;
+        bool isEqual(Numbers const &other)    const;
 };
 
 std::ostream &operator<<(std::ostream &out, Numbers const &numbers);    // operinsert.cc
+bool operator!=(Numbers const &lhs,      // inline
+                Numbers const &rhs);
 
 inline size_t Numbers::size()   const
 {
     return d_size;
 }
+
+
 
 inline bool operator!=(Numbers const &lhs,  
                        Numbers const &rhs)
@@ -52,4 +54,4 @@ inline bool operator!=(Numbers const &lhs,
     return not (lhs == rhs);    // inverse of equal
 }
 
-#endif 
+#endif
