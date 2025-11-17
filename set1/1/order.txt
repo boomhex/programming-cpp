@@ -1,8 +1,11 @@
 descr1.txt
 numbers/numbers.h
 numbers/numbers.ih
-numbers/operindex1.cc
-numbers/operindex2.cc
 numbers/equal.cc
+numbers/opidx.cc
+numbers/opidx1.cc
+numbers/opidx2.cc
 numbers/operatorindex.cc
+numbers/isequal.cc
+
 numbers/operinsert.cc

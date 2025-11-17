@@ -10,8 +10,8 @@ class Numbers
     int *d_nums = 0;
 
     public:
-        friend bool operator==(Numbers const &lhs,      // equal.cc
-                               Numbers const &rhs);
+        friend bool operator==(Numbers const &lhs, Numbers const &rhs);
+
         explicit Numbers(size_t size);
     
         Numbers(size_t size, int value);
@@ -27,27 +27,28 @@ class Numbers
 
         // members of the public interface, like accessors
         size_t size()   const;
-        int &operator[](size_t index);                  // operindex1.cc
-        int const &operator[](size_t index)  const;     // operindex2.cc
+        int &operator[](size_t index);
+        int const &operator[](size_t index)  const;
+
+        Numbers &operator+=(Numbers const &other)   &;
+        Numbers &&operator+=(Numbers const &other)   &&;
 
     private:
         // support members for this class, if any
         int &opIdx(size_t index)  const;
         void boundary(size_t index) const;
         bool isEqual(Numbers const &other)    const;
+        void add(Numbers const &other);     // might throw
+        bool equalSize(Numbers const &other);
 };
 
 std::ostream &operator<<(std::ostream &out, Numbers const &numbers);    // operinsert.cc
-bool operator!=(Numbers const &lhs,      // inline
-                Numbers const &rhs);
-
+bool operator!=(Numbers const &lhs, Numbers const &rhs);
 
 inline size_t Numbers::size()   const
 {
     return d_size;
 }
-
-
 
 inline bool operator!=(Numbers const &lhs,  
                        Numbers const &rhs)
