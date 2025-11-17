@@ -1,0 +1,8 @@
+descr1.txt
+numbers/numbers.h
+numbers/numbers.ih
+numbers/operindex1.cc
+numbers/operindex2.cc
+numbers/equal.cc
+numbers/operatorindex.cc
+numbers/operinsert.cc

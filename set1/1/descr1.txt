@@ -1,0 +1,3 @@
+The class numbers is a class that stores an array of integers. The class has
+members that allow accessing using the index operator[], and the class supports
+insertion into a stream as well as comparison for equality and inequality.

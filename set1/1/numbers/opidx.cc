@@ -1,6 +1,6 @@
 #include "numbers.ih"
 
-int &Numbers::operatorIndex(size_t index)   const
+int &Numbers::opIdx(size_t index)   const
 {
     boundary(index);
     return d_nums[index];
