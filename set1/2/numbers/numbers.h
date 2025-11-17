@@ -30,8 +30,12 @@ class Numbers
         int &operator[](size_t index);
         int const &operator[](size_t index)  const;
 
-        Numbers &operator+=(Numbers const &other)   &;
-        Numbers &&operator+=(Numbers const &other)   &&;
+        Numbers &operator+=(Numbers const &other)       &;      // opadd1.cc
+        Numbers &&operator+=(Numbers const &other)      &&;     // opadd2.cc
+        Numbers &operator-=(Numbers const &other)       &;      // opsub1.cc
+        Numbers &&operator-=(Numbers const &other)      &&;     // opsub2.cc
+        Numbers &operator*=(int scalar)       &;      // opmult.cc
+        Numbers &operator/=(int divisor)       &;      // opdiv.cc
 
     private:
         // support members for this class, if any
@@ -39,7 +43,11 @@ class Numbers
         void boundary(size_t index) const;
         bool isEqual(Numbers const &other)    const;
         void add(Numbers const &other);     // might throw
+        void mult(int scalar);
+        void div(int divisor);
+        void sub(Numbers const &other);
         bool equalSize(Numbers const &other);
+        bool zeroDivisionError(int divisor);
 };
 
 std::ostream &operator<<(std::ostream &out, Numbers const &numbers);    // operinsert.cc
@@ -54,6 +62,18 @@ inline bool operator!=(Numbers const &lhs,
                        Numbers const &rhs)
 {
     return not (lhs == rhs);    // inverse of equal
+}
+
+inline Numbers &Numbers::operator/=(int divisor)    &
+{
+    div(divisor);
+    return *this;
+}
+
+inline Numbers &Numbers::operator*=(int scalar)     &
+{
+    mult(scalar);
+    return *this;
 }
 
 #endif

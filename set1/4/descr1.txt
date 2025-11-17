@@ -1,0 +1,20 @@
+1.
+The reason that the original promtGet does work is because
+the function is declared to return bool, but getline(in, str) returns a 
+reference to std::istream, so the return statement requires converting an 
+istream& to bool.  
+
+
+2. convert istream reference to bool
+bool promptGet(istream &in, string &str)
+{
+    cout << "Enter a line or ^D\n";     // ^D signals end-of-input
+    return static_cast<bool>(getline(in, str));
+}
+
+3. make the function return a istream reference
+istream &promptGet(istream &in, string &str)
+{
+    cout << "Enter a line or ^D\n";     // ^D signals end-of-input
+    return getline(in, str);
+}
