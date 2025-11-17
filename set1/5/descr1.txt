@@ -1,0 +1,20 @@
+1.Explain why First::fun is called. 
+
+  First::fun is called due to the `Koenig lookup', namely because the function is called
+  without specifying a namespace, the namespace is determined by the function's argument type.
+
+2. How would you call Second::fun instead?
+
+  To call the Second::fun I would use the fully quallified name Second::fun(enumVar);
+
+3. In the namespaces slides (#6) it is stated that operator<<'s use is simplified because of the Koenig lookup. Explain.
+
+  It simplifies the use of operator<< because the compiler automatically searches the namespace of the argument (std::cout)
+  and choses the correct overload of the function.
+
+4. Now, just above main, declare a function void fun(First::Enum symbol). Compile this program. What happens? Why?
+
+  Koenig lookup is only used in the context of namespaces. If a function is defined outside of a namespace, defining a parameter
+  of a type that's defined inside a namespace, and that namespace also defines a function with an identical signature, then the 
+  compiler reports an ambiguity when that function is called.
+
