@@ -1,0 +1,4 @@
+This program copies a file without using C++ streams and ensures that the
+resulting copy keeps the original file’s timestamp. Its purpose is to practice
+basic system-level file handling, covering both data copying and metadata
+preservation.
