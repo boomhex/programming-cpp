@@ -1,0 +1,7 @@
+This program defines a Strings class that manages a dynamic collection of
+std::string objects using reference counting to share and reuse data
+efficiently. To support copy-on-write behavior when elements change, it
+introduces a nested Proxy class that represents a reference to one stored
+string. Only Strings may construct Proxy objects, ensuring controlled
+access to shared data. The Proxy type also supports stream insertion,
+allowing its referenced string to be printed directly.
