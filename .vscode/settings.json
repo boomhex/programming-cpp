@@ -72,5 +72,7 @@
         "text_encoding": "cpp",
         "thread": "cpp",
         "*.h": "cpp",
+        "__node_handle": "cpp",
+        "forward_list": "cpp"
     }
 }

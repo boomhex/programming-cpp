@@ -6,5 +6,5 @@ void Numbers::div(int divisor)
         return;
 
     for (size_t index = 0; index != d_size; ++index)
-        opIdx(index) /= divisor;
+        safeAt(index) /= divisor;
 }

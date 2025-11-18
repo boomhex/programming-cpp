@@ -21,7 +21,6 @@ class Numbers
         Numbers(Numbers &&tmp);
         ~Numbers();
 
-        void swap(Numbers &other);
         Numbers &operator=(Numbers const &other);
         Numbers &operator=(Numbers &&tmp);
 
@@ -39,19 +38,34 @@ class Numbers
 
     private:
         // support members for this class, if any
-        int &opIdx(size_t index)  const;
-        void boundary(size_t index) const;
-        bool isEqual(Numbers const &other)    const;
-        void add(Numbers const &other);     // might throw
+        int &safeAt(size_t index)               const;
+        void boundary(size_t index)             const;
+        bool isEqual(Numbers const &other)      const;
+        void swap(Numbers &other);
+
+        void add(Numbers const &other);
         void mult(int scalar);
         void div(int divisor);
         void sub(Numbers const &other);
+
         bool equalSize(Numbers const &other);
         bool zeroDivisionError(int divisor);
 };
 
 std::ostream &operator<<(std::ostream &out, Numbers const &numbers);    // operinsert.cc
 bool operator!=(Numbers const &lhs, Numbers const &rhs);
+
+Numbers operator+(Numbers const &lhs, Numbers const &rhs);      // opadd3.cc
+Numbers operator+(Numbers &&tmp, Numbers const &rhs);           // opadd4.cc
+
+Numbers operator-(Numbers const &lhs, Numbers const &rhs);      // opsub3.cc
+Numbers operator-(Numbers &&tmp, Numbers const &rhs);           // opsub4.cc
+
+Numbers operator*(Numbers const &lhs, int scalar);              // opmult1.cc 
+Numbers operator*(int scalar, Numbers const &rhs);              // opmult2.cc
+
+Numbers operator/(Numbers const &lhs, int divisor);      // opdiv1.cc
+
 
 inline size_t Numbers::size()   const
 {

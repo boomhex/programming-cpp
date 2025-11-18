@@ -2,5 +2,5 @@
 
 int const &Numbers::operator[](size_t index)  const
 {
-    return opIdx(index);
+    return safeAt(index);
 }

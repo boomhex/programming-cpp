@@ -2,5 +2,5 @@
 
 int &Numbers::operator[](size_t index)
 {
-    return opIdx(index);
+    return safeAt(index);
 }
