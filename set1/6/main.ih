@@ -1,4 +1,4 @@
-#include "msg.ih"
-#include "show.ih"
+#include "msg.h"
+#include "show.h"
 #include <iostream>
 
