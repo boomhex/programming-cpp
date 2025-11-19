@@ -1,10 +1,10 @@
 #include "strings.ih"
 
-ostream Strings::insertInto(ostream &out)
+
+ostream &Strings::insertInto(ostream &out)  const
 {
-    bool first = false;
     for (size_t index = 0; index != d_size; ++index)
-        if (not first)
-            out << manip?;
-        out << 
+        d_manip(out, *this, index);
+
+    return out;
 }

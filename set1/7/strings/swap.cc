@@ -2,8 +2,8 @@
 
 void Strings::swap(Strings &other)
 {
-    char buffer[sizeof(Strings)];
-    memcpy(buffer, this,   sizeof(Strings));
-    memcpy(this,   &other, sizeof(Strings));
-    memcpy(static_cast<void *>(&other), buffer, sizeof(Strings));
+    std::swap(d_size,  other.d_size);
+    std::swap(d_str,   other.d_str);
+    std::swap(d_manip, other.d_manip);
+    std::swap(d_sep,   other.d_sep);
 }

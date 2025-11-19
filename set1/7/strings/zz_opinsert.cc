@@ -1,6 +1,8 @@
 #include "strings.ih"
 
-ostream &operator<<(ostream &out, Strings strings)
+
+ostream &operator<<(ostream &out, Strings const &strings)
 {
     strings.insertInto(out);
+    return out;
 }
