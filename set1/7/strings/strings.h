@@ -9,6 +9,8 @@ class Strings
     std::string *d_str = 0;
 
     public:
+        friend std::ostream &operator<<(std::ostream &out, Strings strings);
+
         Strings() = default;
         Strings(int argc, char **argv);    // 2.cc
         Strings(char **environLike);       // 3.cc
@@ -29,10 +31,13 @@ class Strings
         std::string &at(size_t idx);
 
         void add(std::string const &next);          // add another element
+        Strings const operator()(
+            void (*manip)(std::ostream &, Strings const &, size_t)
+        );
 
     private:
         std::string *duplicateAndEnlarge();
-        std::ostream &insterInto(std::ostream &out);
+        std::ostream &insertInto(std::ostream &out);
 };
 
 inline size_t Strings::size() const         // potentially dangerous practice:
