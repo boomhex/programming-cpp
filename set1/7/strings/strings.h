@@ -46,6 +46,8 @@ class Strings
         static void stdSeparator(std::ostream &out, Strings const &strings, size_t index);
 };
 
+void only2(std::ostream &out, Strings const &strings, size_t index);
+
 inline size_t Strings::size() const         // potentially dangerous practice:
 {                                           // inline accessors
     return d_size;
