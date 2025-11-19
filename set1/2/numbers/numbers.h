@@ -33,8 +33,8 @@ class Numbers
         Numbers &&operator+=(Numbers const &other)      &&;     // opadd2.cc
         Numbers &operator-=(Numbers const &other)       &;      // opsub1.cc
         Numbers &&operator-=(Numbers const &other)      &&;     // opsub2.cc
-        Numbers &operator*=(int scalar)       &;      // opmult.cc
-        Numbers &operator/=(int divisor)       &;      // opdiv.cc
+        Numbers &operator*=(int scalar)       &;      // inline
+        Numbers &operator/=(int divisor)       &;      // inline
 
     private:
         // support members for this class, if any
