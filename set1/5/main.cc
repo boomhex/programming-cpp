@@ -1,5 +1,4 @@
 #include "main.ih"
-
 namespace First 
 {
   enum Enum 
