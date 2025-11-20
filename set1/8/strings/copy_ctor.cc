@@ -6,5 +6,5 @@ Strings::Strings(Strings const &other)
     d_str{ other.d_str },
     d_shared{ other.d_shared }
 {
-    ++*d_shared;      // another owner of the same data
+    ++*d_shared;
 }

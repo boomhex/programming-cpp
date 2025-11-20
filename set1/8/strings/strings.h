@@ -7,7 +7,7 @@ class Strings
 {
     size_t d_size = 0;
     std::string *d_str = 0;
-    size_t *d_shared;  // pointer to shared reference count
+    size_t *d_shared;
 
     public:
         class Proxy
@@ -51,8 +51,8 @@ class Strings
         void cow();
 };
 
-inline size_t Strings::size() const         // potentially dangerous practice:
-{                                           // inline accessors
+inline size_t Strings::size() const
+{
     return d_size;
 }
 

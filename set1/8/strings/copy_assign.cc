@@ -5,7 +5,7 @@ Strings &Strings::operator=(Strings const &rhs)
     if (this == &rhs)
         return *this;
 
-    ++*rhs.d_shared;        // protect against self-assignment & exceptions
+    ++*rhs.d_shared;
 
     if (--*d_shared == 0)
     {
