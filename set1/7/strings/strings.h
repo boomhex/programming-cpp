@@ -8,12 +8,14 @@ class Strings
     size_t d_size = 0;
     std::string *d_str = 0;
 
-    void (*d_manip)(std::ostream &, Strings const &, size_t) = &Strings::stdSeparator;
-    std::string d_sep = "\n";
+    mutable void (*d_manip)(std::ostream &,
+        Strings const &,
+        size_t) = &Strings::stdInsertion;
+    mutable std::string d_sep = "\n";
 
     public:
-        friend std::ostream &operator<<(std::ostream &out, Strings const &strings);
-
+        friend std::ostream &operator<<(std::ostream &out,
+            Strings const &strings);
         Strings() = default;
         Strings(int argc, char **argv);    // 2.cc
         Strings(char **environLike);       // 3.cc
@@ -22,7 +24,6 @@ class Strings
         Strings(Strings &&tmp);             // see part 1: allocation
 
         //~Strings();
-
         Strings &operator=(Strings const &rhs); // see part 1: allocation
         Strings &operator=(Strings &&rhs);      // see part 1: allocation
 
@@ -34,16 +35,18 @@ class Strings
         std::string &at(size_t idx);
 
         void add(std::string const &next);          // add another element
-        Strings const operator()(                   // operparen.cc
+        Strings const &operator()(                   // operparen.cc
             void (*manip)(std::ostream &, Strings const &, size_t)
         );
-        Strings const operator()(char const *sep);    // operparen1.cc
+        Strings const &operator()(char const *sep);    // operparen1.cc
 
     private:
         std::string *duplicateAndEnlarge();
         std::ostream &insertInto(std::ostream &out) const;
 
-        static void stdSeparator(std::ostream &out, Strings const &strings, size_t index);
+        void resetInsertion()    const;
+
+        static void stdInsertion(std::ostream &out, Strings const &strings, size_t index);
 };
 
 void only2(std::ostream &out, Strings const &strings, size_t index);
