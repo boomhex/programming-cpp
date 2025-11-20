@@ -13,7 +13,7 @@ class Numbers
         friend bool operator==(Numbers const &lhs, Numbers const &rhs);
 
         explicit Numbers(size_t size);
-    
+
         Numbers(size_t size, int value);
         Numbers(size_t size, int *values);
         Numbers(std::initializer_list<int> iniList);

@@ -7,5 +7,4 @@ numbers/opidx1.cc
 numbers/opidx2.cc
 numbers/operatorindex.cc
 numbers/isequal.cc
-
 numbers/operinsert.cc
