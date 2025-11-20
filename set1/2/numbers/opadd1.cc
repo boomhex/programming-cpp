@@ -3,8 +3,8 @@
 
 Numbers &Numbers::operator+=(Numbers const &other)  &
 {
-    Numbers tmp{ *this };
-    std::move(tmp) += other;
-    swap(tmp);
+    Numbers copy{ *this };
+    std::move(copy) += other;
+    swap(copy);
     return *this;
 }

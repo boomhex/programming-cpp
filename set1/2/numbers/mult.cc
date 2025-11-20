@@ -3,6 +3,6 @@
 
 void Numbers::mult(int scalar)
 {
-    for (size_t index = 0; index != d_size; ++index)
-        opIdx(index) *= scalar;
+    for (size_t index = 0; index != d_size; ++index)    // mult elements
+        safeAt(index) *= scalar;
 }

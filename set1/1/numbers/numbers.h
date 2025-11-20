@@ -32,8 +32,8 @@ class Numbers
 
     private:
         // support members for this class, if any
-        int &opIdx(size_t index)  const;
-        void boundary(size_t index) const;
+        int &safeAt(size_t index)  const;
+        bool boundary(size_t index) const;
         bool isEqual(Numbers const &other)    const;
 };
 
@@ -47,7 +47,10 @@ inline size_t Numbers::size()   const
     return d_size;
 }
 
-
+inline bool operator==(Numbers const &lhs, Numbers const &rhs)
+{
+    return lhs.isEqual(rhs);
+}
 
 inline bool operator!=(Numbers const &lhs,  
                        Numbers const &rhs)

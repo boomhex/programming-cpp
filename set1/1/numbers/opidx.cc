@@ -1,7 +1,8 @@
 #include "numbers.ih"
 
-int &Numbers::opIdx(size_t index)   const
+int &Numbers::safeAt(size_t index)   const
 {
-    boundary(index);
+    if (not boundary(index))
+        index = 0;
     return d_nums[index];
 }

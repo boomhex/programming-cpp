@@ -1,0 +1,29 @@
+#define CLS
+#define LIBRARY             "objects"
+
+#define NOCOLORS            "-fdiagnostics-color=never"
+
+#define MULTICOMP           "jobs -q"
+//#define SPCH                "-qu xerr/xerr.ih -o " ${NOCOLORS}
+
+#define USE_ALL             "a"
+
+#define MAIN                "main.cc"
+#define SOURCES             "*.cc"
+#define OBJ_EXT             ".o"
+#define TMP_DIR             "tmp"
+
+#define USE_ECHO              ON
+#define IH                  ".ih"
+
+                            // or: "ccache g++"
+#define CXX                 "g++"
+
+#define CXXFLAGS            "-Wall -Werror -O2 " ${NOCOLORS}
+
+#define REFRESH
+#define LDFLAGS             "-s"
+#define ADD_LIBRARIES       ""
+#define ADD_LIBRARY_PATHS   ""
+
+#define DEFCOM     "library"
