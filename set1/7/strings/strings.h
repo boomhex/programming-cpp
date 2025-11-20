@@ -35,10 +35,10 @@ class Strings
         std::string &at(size_t idx);
 
         void add(std::string const &next);          // add another element
-        Strings const &operator()(                   // operparen.cc
+        Strings const &operator()(                   // operatorcall.cc
             void (*manip)(std::ostream &, Strings const &, size_t)
         );
-        Strings const &operator()(char const *sep);    // operparen1.cc
+        Strings const &operator()(char const *sep);    // operatorcall.cc
 
     private:
         std::string *duplicateAndEnlarge();
@@ -46,7 +46,9 @@ class Strings
 
         void resetInsertion()    const;
 
-        static void stdInsertion(std::ostream &out, Strings const &strings, size_t index);
+        static void stdInsertion(std::ostream &out,
+                                 Strings const &strings,
+                                 size_t index);
 };
 
 void only2(std::ostream &out, Strings const &strings, size_t index);

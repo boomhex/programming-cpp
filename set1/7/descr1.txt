@@ -3,6 +3,4 @@ manipulator-like functionality using overloaded function-call operators. The
 Strings class is change such that its output format can be changed dynamically
 inside a single stream expression by setting separators or custom callback
 functions. A user can select simple textual separators or supply a free
-function that controls how each string is inserted. The assignment demonstrates
-how to combine operator overloading, stateful insertion logic, and function
-pointers to achieve flexible, reusable output behavior.
+function that controls how each string is inserted.
