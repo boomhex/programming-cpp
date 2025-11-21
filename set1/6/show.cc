@@ -46,9 +46,7 @@ void show(Msg msg)
     if ((msg & flag) == flag)
     {
       if (not first)
-      {
         std::cout << ' ';
-      }
 
       std::cout << msgNames[index];
       first = false;
