@@ -1,7 +1,3 @@
 descr1.txt
 msg.h
-msg.cc
-show.h
 show.cc
-main.h
-main.cc
