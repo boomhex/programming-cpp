@@ -1,6 +1,7 @@
 descr1.txt
-main.cc
-main.ih
 msg.h
-show.cc
+msg.cc
 show.h
+show.cc
+main.h
+main.cc

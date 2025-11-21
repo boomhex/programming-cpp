@@ -4,7 +4,7 @@ strings/swap.cc
 strings/operatorcall.cc
 strings/operatorcall1.cc
 strings/insertinto.cc
-strings/resetinsertion.cc
+strings/resetInsertion.cc
 strings/stdinsertion.cc
 strings/only2.cc
 main.cc
