@@ -1,8 +1,3 @@
 descr1.txt
-main.cc
-main.ih
 msg.h
-msg.ih
 show.cc
-show.h
-show.ih

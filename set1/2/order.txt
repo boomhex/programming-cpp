@@ -1,4 +1,6 @@
 descr1.txt
+numbers/numbers.h
+numbers/numbers.ih
 numbers/opadd1.cc
 numbers/opadd2.cc
 numbers/opsub1.cc
@@ -16,3 +18,4 @@ numbers/opsub4.cc
 numbers/opmult1.cc
 numbers/opmult2.cc
 numbers/opdiv1.cc
+numbers/swap.cc

@@ -1,10 +1,10 @@
 descr1.txt
 numbers/numbers.h
 numbers/numbers.ih
-numbers/equal.cc
+numbers/boundary.cc
+numbers/isequal.cc
 numbers/opidx.cc
 numbers/opidx1.cc
 numbers/opidx2.cc
-numbers/operatorindex.cc
 numbers/isequal.cc
 numbers/operinsert.cc
