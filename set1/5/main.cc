@@ -20,6 +20,6 @@ namespace Second
 
 int main()
 {
-  First::Enum enumVar;
+  First::Enum enumVar{};
   fun(enumVar);
 }
