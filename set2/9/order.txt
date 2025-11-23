@@ -1,0 +1,8 @@
+descr1.txt
+out.txt
+descr2.txt
+demo/demo.h
+demo/demo.ih
+demo/demo.cc
+demo/dtor.cc
+main.cc

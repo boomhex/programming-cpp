@@ -1,0 +1,16 @@
+The reason that the destructor is never called is because the object is never 
+completely constructed. While constructing Demo, a value is thrown. This 
+exception reaches the function-try-block and makes the contruction fail. This
+also makes the exception rethrow it automaticly, this is why main catches it 
+aswell. Because of the failed construction there is no object to destruct.
+
+When moving the try-block inside the constructor it does construct. this is 
+because the exception is chatched and handled inside the constructor. This 
+makes the object completely construct and calls the destructor on desctruction.
+
+This destruction happens when the object goes out of scope, the location in our 
+case is the closing bracked of the main try block. This is the loaction where 
+the destructor is called.
+
+
+

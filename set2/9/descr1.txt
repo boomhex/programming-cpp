@@ -1,0 +1,7 @@
+This program defines a simple class Demo whose constructor with an int 
+parameter deliberately throws that value and uses a function-try-block to 
+display it. The main function constructs a Demo object inside a try block to 
+study when the object’s destructor is invoked (or not) when exceptions occur 
+during construction.
+
+When the program is ran the output is:
