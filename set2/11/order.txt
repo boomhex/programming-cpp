@@ -1,0 +1,11 @@
+descr1.txt
+main.ih
+obj.cc
+objcopy.cc
+throwobj.cc
+catchbyval.cc
+catchbyref.cc
+whichcopy.cc
+rethrow.cc
+catchbyrethrow.cc
+main.cc
