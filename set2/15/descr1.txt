@@ -1,0 +1,12 @@
+Explain why exit calls should be avoided in C++ programs, and why exceptions are a better alternative.
+
+exit() calls should be avoided because:
+
+1. They terminate the program directly allowing no opportunity for the program to recover from a non-fatal disastrous event
+
+2. Because the program terminates directly, the destructors of local objects are not automatically called,
+leading to resource leaks (violating the RAII paradigm)
+
+3. It is bad design to use them in libraries. A library shouldn't terminate the whole program.
+
+For example:

@@ -1,0 +1,9 @@
+#ifndef MAIN_IH
+#define MAIN_IH
+
+#include "aux.h"
+#include <iostream>
+#include <string>
+#include <exception>
+
+#endif
