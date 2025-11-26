@@ -1,0 +1,6 @@
+descr1.txt
+maxfour/maxfour.h
+maxfour/maxfour.ih
+maxfour/ctor.cc
+maxfour/dtor.cc
+main.cc
