@@ -1,0 +1,36 @@
+The default implementation for the constructor is not exception safe. Because 
+rawPointers may allocate some memory and after that throw. So the constructor 
+should clean that up.
+
+To fix this we can catch the throw and free the allocated memory. after that 
+we rethrow because the object still failed to construct.
+
+#include "strings.ih"
+    
+Strings::Strings()
+:
+    d_str(nullptr)
+{
+    try
+    {
+        d_str = rawPointers(1);
+    }
+    catch (...)
+    {
+        delete[] d_str;
+        throw;
+    }
+}
+
+If the default constructor is called from another constructor and the default 
+constructor throws an exception, then the called constructor throws as well, 
+which means that the object is never constructed and no destructor is called.
+This should not give any leaks as long as the default constructor is exception 
+safe.
+
+If the default constructor is called from another constructor and the called 
+constructor throws an exception, then it is different. Because the default 
+constructor had no exceptions it means that the object is fully constructed, 
+so if after that the called constructor throws an exception it means that 
+destructor is also called. the destructor will take care of the fully 
+constructed object. This makes the called constructor exception safe.

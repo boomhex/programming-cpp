@@ -1,0 +1,8 @@
+This program makes an MaxFour object of which there can only be 4.
+
+When you try to make a array of 10 MaxFour objects, then it will construct the
+first 4 without any problem, than when trying to construct the 5th on it 
+throws. This makes the construction of the array fail. and thus the destructor
+is called of the 4 created objects and the memory allocated ofr 10 MaxFour 
+objects is returned aswell. So when construction fails we dont have to use
+delete[] at all. all objects check destroyed automatically.
