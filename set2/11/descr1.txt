@@ -1,0 +1,19 @@
+This program showcases how throwing makes copies of the thrown objects. When
+the program is ran, each showcase starts with the construction of object Obj.
+This object keeps track of what number of copy it is by incrementing a data
+member d_copy whenever the copy-constructor of the object is called. It is
+not watertight, since one single instance can be copied multiple times, but
+it is good enough for our showcase, and maybe even better since we can see
+which object is copied.
+
+So:
+    When catching by reference, the program shows a construction, and the
+except block catching the first copy of that object. When catching a value
+however, the second copy is caught. This indicates that, when throwing an
+object, you are throwing a copy. The reference parameter catches a
+reference of the thrown copy. Copy no. 1. The value catching catches copy
+no. 2, indicating that a copy of the copy is made.
+
+    When rethrowing, after first catching it as a reference, copy no. 1 is
+caught. However in the exception catching the rethrown object by reference,
+also copy no. 1 is caught. So when using rethrow, no extra copy is made.
