@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.ih": "cpp",
         "__bit_reference": "cpp",
         "__locale": "cpp",
         "__split_buffer": "cpp",
@@ -71,6 +72,12 @@
         "text_encoding": "cpp",
         "thread": "cpp",
         "*.h": "cpp",
-        "*.ih": "cpp",
+        "__hash_table": "cpp",
+        "__node_handle": "cpp",
+        "codecvt": "cpp",
+        "complex": "cpp",
+        "forward_list": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp"
     }
 }
