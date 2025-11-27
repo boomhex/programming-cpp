@@ -7,7 +7,7 @@ void TempFile::createFile(std::filesystem::path const &dir,
     fs::create_directories(dir, errCode);
 
     std::ofstream tmp{ d_filename };              // create empty file
-    if (!tmp)
+    if (not tmp)
         throw string{ "TempFile: cannot create file: " + d_filename.string() };
 
     fs::permissions(d_filename, permissions, errCode);

@@ -34,6 +34,6 @@ int main()
     {
         std::cout << "main: caught exception: " << str << '\n';
     }
-
-      std::cout << "main: end\n";  // the program still executes
+    
+    std::cout << "main: end\n";  // the program still executes
 }

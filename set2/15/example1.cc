@@ -6,10 +6,12 @@ class obj
         obj();
         ~obj();
 };
+
 obj::obj()  
 { 
     std::cout << "Inner constructor\n"; 
 }
+
 obj::~obj() 
 {
     std::cout << "Inner destructor\n"; 
