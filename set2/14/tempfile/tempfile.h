@@ -40,7 +40,8 @@ class TempFile
         void swap(TempFile &other);
 
         std::filesystem::path uniquePattern(std::filesystem::path const &dir,
-            std::filesystem::path const &filename_pattern) const;
+                        std::filesystem::path const &filename_pattern) const;
+
         std::filesystem::path randomName(size_t nchars) const;
 };
 

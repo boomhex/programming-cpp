@@ -4,8 +4,7 @@
 fs::path TempFile::randomName(size_t nchars)    const
 {
     static std::mt19937_64 engine{ std::random_device{}() };
-    static char alphabet[] =
-        "abcdefghijklmnopqrstuvwxyz"
+    static char alphabet[] = "abcdefghijklmnopqrstuvwxyz"
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         "0123456789";
 
