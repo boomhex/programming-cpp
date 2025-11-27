@@ -7,5 +7,5 @@ catchbyval.cc
 catchbyref.cc
 whichcopy.cc
 rethrow.cc
-catchbyrethrow.cc
+catchrethrow.cc
 main.cc

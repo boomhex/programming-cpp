@@ -24,7 +24,7 @@ catch (std::string const &str)
     std::cerr << " No arguments: " << str << "\n";
     throw 2;
 }
-catch (std::invalid_argument except )
+catch (std::invalid_argument const &except )
 {
     std::cerr << " Exception's what: " << except.what()  << "\n";
     throw 3;

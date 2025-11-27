@@ -1,8 +1,9 @@
 descr1.txt
-tempfile/tempfile.cc
+tempfile/tempfile.h
 tempfile/tempfile.ih
+tempfile/tempfile.cc
 tempfile/move.cc
-tempfile/oepratormove.cc
+tempfile/operatormove.cc
 tempfile/destructor.cc
 tempfile/stream.cc
 tempfile/operatorfstream.cc
@@ -14,6 +15,7 @@ tempfile/destroy.cc
 tempfile/swap.cc
 tempfile/uniquepattern.cc
 tempfile/randomname.cc
+main.ih
 scope.cc
 caught.cc
 uncaught.cc

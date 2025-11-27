@@ -1,5 +1,5 @@
 descr1.txt
 aux.h
-aux.cc
 main.ih
+aux.cc
 main.cc
