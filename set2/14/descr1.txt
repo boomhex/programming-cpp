@@ -1,0 +1,50 @@
+TempFile is a class that manages a named temporary file together with its
+associated std::fstream. It creates the file and opens the stream in its
+constructor, and guarantees that the file is closed and removed from the
+filesystem in its destructor. Copy operations are disabled and move operations
+transfer ownership, ensuring exception-safe, unique control over the temporary
+file resource.
+
+The demonstrations show the workings of the class, where uncaught.cc will
+create a temp.tmp file in the current directory. Which is not deleted since
+the error is not caught. The other demos show the workings in this output:
+scope.cc:
+Inside scope block:
+temp file name: "/var/folders/3n/qsvmhfx1379dls835t_35_vm0000gn/T/XXXXXXXX.tmp"
+exists? true
+
+After scope:
+temp file name: "/var/folders/3n/qsvmhfx1379dls835t_35_vm0000gn/T/XXXXXXXX.tmp"
+exists? false
+
+caught.cc:
+Before throwFun() throws:
+temp file: "./temp.tmp"
+exists? true
+Caught exception: Throw in throwFun
+
+After catch:
+temp file: "./temp.tmp"
+exists? false
+
+uncaught2.cc
+Before conversion:
+temp file: "/var/folders/3n/qsvmhfx1379dls835t_35_vm0000gn/T/XXXXXXXX.tmp"
+exists? true
+After conversion:
+temp file: ""
+exists? false
+terminate called after throwing an instance of 'std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >'
+zsh: abort      ./a.out
+
+My Rule-of-Thumb for writing a catch clause:
+- Does it leak when something fails? And should I fix that here?
+- Can I repair the specific error in a "acceptable" way from the level I am
+thinking of writing one.
+
+My Rule-of-Thumb for for pointers-to-dynamically-allocated-memory and other
+variables that hold acquired resources:
+- I tend to wrap them as class data members. Such that construction and
+desctruction can occur safely. Basically to gain control with a separate
+object instead of a local variable where you would need to not forget to
+free the memory after it is out of scope.
