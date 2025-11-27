@@ -1,0 +1,8 @@
+The program throws different exception depending on the first command-line argument:
+  1. If no argument is provided, it throws a std::string containing "need an argument".
+  2. If the first character is a digit, it throws that character’s value as a std::size_t.
+  3. In all other cases, it throws a std::invalid_argument containing the argument.
+
+Each of these exceptions is caught by a matching catch clause, which prints a specific
+ message and then rethrows an integer identifying the catch block. This integes is caught
+ in a final catch(int) section that act like a finally keyword.

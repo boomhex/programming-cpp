@@ -2,17 +2,17 @@
 
 class obj
 {
-  public:
-    obj();
-    ~obj();
+    public:
+        obj();
+        ~obj();
 };
 obj::obj()  
 { 
-  std::cout << "Inner constructor\n"; 
+    std::cout << "Inner constructor\n"; 
 }
 obj::~obj() 
 {
-  std::cout << "Inner destructor\n"; 
+    std::cout << "Inner destructor\n"; 
 }
 
 void func()

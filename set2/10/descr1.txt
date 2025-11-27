@@ -1,0 +1,2 @@
+This version of main handles each possible exception individually, ensuring every error source is dealt with 
+in its own catch block, fully adhering to the 1:1 coordinate design.
