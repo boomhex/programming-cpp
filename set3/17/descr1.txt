@@ -1,0 +1,11 @@
+When a class Derived inherits publically from another class Base, the user of
+derived can access the base class's public members, the designer of derived
+can access both the public and protected members of class Base.
+When using protected inheritance, the user of Derived cannot access any members
+from Base. The designer can access public and protected members again.
+When using private inheritance, a user can access none of Base class's members,
+the designer can use public and private members again.
+
+The difference between protected and private inheritance is that in protecteed,
+protected and public members from Base become protected in Derived. While in
+private inheritance, members become private in Derived.
