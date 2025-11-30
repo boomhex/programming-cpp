@@ -1,0 +1,34 @@
+This program has a simple base class that is being inherited by a class 
+derived. The goal of the program is to see which base constructor is called
+when calling a derived constroctor.
+
+When calling the default constructor of derived, then the output is:
+-> Base(): default constructor
+
+but when calling the copy or move constructor of derived, then the output is 
+still: 
+-> Base(): default constructor
+
+This is because the compiler calls by defasult the default constructor of 
+base. This means the base object is never copied or moved, but always 
+constructed.
+
+To solve this issue you can call the correct base constructor in the derived
+constructor. The added lines have "//added" behind it.
+
+If the program should use the base move constructor when the derived copy 
+constructor is called, then you need to change the code:
+
+Base(other) -> Base(move(const_cast<Derived&>(other))) 
+
+This turns the "Derived const &other" first into "Derived &other" and with 
+"move()" it turns it into "Derived &&other". and thus makes it call the 
+base move contructor
+
+If the program should use the Copy constructor when the move constructor is 
+called, then you need to change the code:
+
+Base(move(other)) -> Base(other);
+
+This makes sure you call the base copy constructor even when the derived move 
+constructor is called.
