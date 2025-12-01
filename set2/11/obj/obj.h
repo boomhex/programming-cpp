@@ -13,6 +13,9 @@ class Obj
         size_t copyNo()     const;
 };
 
+                                        // insert copy no into stream
+std::ostream &operator<<(std::ostream &out, Obj const &obj);
+
 inline size_t Obj::copyNo()     const
 {
     return d_copy;

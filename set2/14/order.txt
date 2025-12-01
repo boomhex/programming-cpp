@@ -6,12 +6,11 @@ tempfile/move.cc
 tempfile/operatormove.cc
 tempfile/destructor.cc
 tempfile/stream.cc
-tempfile/operatorfstream.cc
+tempfile/release.cc
 tempfile/createfile.cc
 tempfile/close.cc
 tempfile/remove.cc
 tempfile/open.cc
-tempfile/destroy.cc
 tempfile/swap.cc
 tempfile/uniquepattern.cc
 tempfile/randomname.cc
