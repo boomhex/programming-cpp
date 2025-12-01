@@ -12,7 +12,7 @@ TempFile::TempFile(std::filesystem::path const &directory,
         createFile(directory, permissions);
         open();
     }
-    catch (string const &msg)
+    catch (std::exception const &except)
     {
         remove();
         throw;  // throw safely

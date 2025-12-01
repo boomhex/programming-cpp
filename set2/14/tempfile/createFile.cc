@@ -1,5 +1,6 @@
 #include "tempfile.ih"
 
+
 void TempFile::createFile(std::filesystem::path const &dir,
                 std::filesystem::perms permissions)
 {
@@ -8,7 +9,8 @@ void TempFile::createFile(std::filesystem::path const &dir,
 
     std::ofstream tmp{ d_filename };              // create empty file
     if (not tmp)
-        throw string{ "TempFile: cannot create file: " + d_filename.string() };
+        throw std::runtime_error(
+            "TempFile: cannot create file: " + d_filename.string());
 
     fs::permissions(d_filename, permissions, errCode);
 }
