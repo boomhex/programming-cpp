@@ -9,23 +9,7 @@ try
 
     process.run();                                              
 }
-catch (int const value)
+catch (...) 
 {
-    if (value == 0)
-        return 0;
-    return 1;
-}
-catch (std::string const &str)
-{
-    std::cerr << str << '\n';
-    return 1;
-}
-catch (std::exception const &exep)
-{
-    std::cerr << exep.what() << '\n';
-    return 1;
-}
-catch (...){
-    std::cerr << "Unknown exception thrown";
-    return 1;
+    return handleException();
 }
