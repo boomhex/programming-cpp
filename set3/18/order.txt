@@ -1,0 +1,13 @@
+descr1.txt
+base/base.h
+base/base.ih
+base/ctor.cc
+base/copy_ctor.cc
+base/move_ctor.cc
+derived/derived.h
+derived/derived.ih
+derived/ctor.cc
+derived/copy_ctor.cc
+derived/move_ctor.cc
+main.ih
+main.cc

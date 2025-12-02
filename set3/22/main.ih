@@ -1,0 +1,4 @@
+#include "base/base.h"
+#include "derived/derived.h"
+
+void caller(Base &obj);

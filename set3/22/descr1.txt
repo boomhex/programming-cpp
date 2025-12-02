@@ -1,0 +1,4 @@
+The provided caller function calls hello() from derived, after recasting a Base
+class object to a Derived class. This is unreccommended, since this only works
+when obj really points to a Base class object. Another object will have
+undefined behavior when attempting this.

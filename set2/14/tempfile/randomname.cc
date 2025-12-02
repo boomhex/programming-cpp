@@ -1,7 +1,7 @@
 #include "tempfile.ih"
 
-
-fs::path TempFile::randomName(size_t nchars)    const
+// static
+fs::path TempFile::randomName(size_t nchars)
 {
     static std::mt19937_64 engine{ std::random_device{}() };
     static char alphabet[] = "abcdefghijklmnopqrstuvwxyz"
@@ -13,7 +13,7 @@ fs::path TempFile::randomName(size_t nchars)    const
 
     std::string name{};
 
-    for (std::size_t index = 0; index != nchars; ++index)
+    while (nchars-- != 0)    // do nchars times
         name += alphabet[dist(engine)];
 
     return fs::path{ name + ".tmp"};

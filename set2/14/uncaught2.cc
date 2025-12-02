@@ -10,7 +10,7 @@ int main()
     std::cout << "temp file: " << tmp.name() << '\n';
     std::cout << "exists? " << std::boolalpha << fs::exists(tmp.name()) << '\n';
 
-    fstream fs = tmp;
+    fstream fs = tmp.release();
 
     std::cout << "After conversion:\n";
     std::cout << "temp file: " << tmp.name() << '\n';

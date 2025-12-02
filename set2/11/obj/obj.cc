@@ -1,4 +1,4 @@
-#include "main.ih"
+#include "obj.ih"
 
 
 Obj::Obj(size_t ident)

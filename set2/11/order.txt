@@ -1,11 +1,14 @@
 descr1.txt
+obj/obj.h
+obj/obj.ih
+obj/obj.cc
+obj/objcopy.cc
+obj/operatorinsert.cc
 main.ih
-obj.cc
-objcopy.cc
 throwobj.cc
 catchbyval.cc
 catchbyref.cc
 whichcopy.cc
 rethrow.cc
-catchbyrethrow.cc
+catchrethrow.cc
 main.cc
