@@ -1,0 +1,10 @@
+When using placement new, or in the context of unrestricted unions,
+explicit destructor calls are encountered. Explain why code using 
+such explicit destructor calls for objects of a class Derived, which 
+was derived from Base doesn't have to call explicitly the Base class's 
+destructor: 
+
+It is not needed to explicitly call the Base class's destructor, because
+C++ guarantees us that when the destructor of a class is called 
+(explicitly or automatically) it releases all the alocated memory
+(including that of all it's base classes)

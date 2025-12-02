@@ -1,0 +1,5 @@
+In this case neither the constructor nor the destructor of the derived
+class would work as intended if the order would be mirrored. If that were 
+the case, derived's constructor would rely on a function from an object that
+is not constructed yet, and the destructor would rely on a function from an 
+object that was already destructed.
