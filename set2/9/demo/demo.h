@@ -1,3 +1,5 @@
+#ifndef DEMO_H
+#define DEMO_H
 
 struct Demo
 {
@@ -5,3 +7,5 @@ struct Demo
     Demo(int value);
     ~Demo();
 };
+
+#endif
