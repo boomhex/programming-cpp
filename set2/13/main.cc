@@ -10,4 +10,10 @@ try
 catch (std::length_error const &lerror)
 {
     std::cerr << lerror.what();
+    return 1;
+}
+catch (...)
+{
+    // Unknown exception: we cannot handle it here → rethrow
+    throw;
 }
