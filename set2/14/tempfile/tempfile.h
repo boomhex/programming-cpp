@@ -28,7 +28,7 @@ class TempFile
         std::filesystem::path const &name() const;  // inline
         std::fstream &stream();
 
-        operator std::fstream&&();
+        std::fstream release();     // use explicit conversion to fstream
     private:
         void createFile(std::filesystem::path const &dir,
             std::filesystem::perms permissions);
@@ -36,13 +36,12 @@ class TempFile
         void close();
         void remove() noexcept;
         void open();
-        void destroy();
         void swap(TempFile &other);
 
         std::filesystem::path uniquePattern(std::filesystem::path const &dir,
                         std::filesystem::path const &filename_pattern) const;
 
-        std::filesystem::path randomName(size_t nchars) const;
+        static std::filesystem::path randomName(size_t nchars);
 };
 
 

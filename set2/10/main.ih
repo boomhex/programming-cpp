@@ -2,6 +2,7 @@
 #define MAIN_IH
 
 #include "aux.h"
+#include "handleException.h"
 #include <iostream>
 #include <string>
 #include <exception>

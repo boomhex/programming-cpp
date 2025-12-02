@@ -18,5 +18,5 @@ fs::path TempFile::uniquePattern(fs::path const &dir,
         if (!fs::exists(rand, errCode))     // return if valid name is found
             return rand;
     }
-    throw "could not create unique name."s;
+    throw std::runtime_error("could not create unique name."s);
 }

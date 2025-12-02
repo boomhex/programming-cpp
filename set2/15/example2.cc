@@ -1,27 +1,29 @@
 #include <iostream>
 
-class obj
+using namespace std;
+
+class Obj
 {
     public:
-        obj();
-        ~obj();
+        Obj();
+        ~Obj();
 };
 
-obj::obj()
+Obj::Obj()
 {
-    std::cout << "obj constructor\n";
+    cout << "Obj constructor\n";
 }
 
-obj::~obj()
+Obj::~Obj()
 {
-    std::cout << "obj destructor\n";
+    cout << "Obj destructor\n";
 }
 
 void func()
 {
-    obj object;   // local object
-    std::cout << "func: something went wrong, throwing exception...\n";
-    throw std::string{"func failed"};   // stack unwinding, calling the objects destructor
+    Obj object;   // local Object
+    cout << "func: something went wrong, throwing exception...\n";
+    throw string{"func failed"};   // stack unwinding, calling the Objects destructor
 }
 
 int main()
@@ -30,10 +32,10 @@ int main()
     {
         func();
     }
-    catch (std::string str )
+    catch (string str )
     {
-        std::cout << "main: caught exception: " << str << '\n';
+        cout << "main: caught exception: " << str << '\n';
     }
     
-    std::cout << "main: end\n";  // the program still executes
+    cout << "main: end\n";  // the program still executes
 }

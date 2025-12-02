@@ -1,5 +1,8 @@
 descr1.txt
 aux.h
+aux.cc
+handleException.h
+handleException.cc
 main.ih
 aux.cc
 main.cc

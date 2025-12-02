@@ -1,31 +1,33 @@
 #include <iostream>
 
-class obj
+using namespace std;
+
+class Obj
 {
     public:
-        obj();
-        ~obj();
+        Obj();
+        ~Obj();
 };
 
-obj::obj()  
+Obj::Obj()  
 { 
-    std::cout << "Inner constructor\n"; 
+    cout << "Obj constructor\n"; 
 }
 
-obj::~obj() 
+Obj::~Obj() 
 {
-    std::cout << "Inner destructor\n"; 
+    cout << "Obj destructor\n"; 
 }
 
 void func()
 {
-    obj object;   // local object
-    std::cout << "func: something went wrong, calling exit...\n";
-    std::exit(1);   // terminate: no stack unwinding, no automatic call of ~obj, violating RAII
+    Obj object;   // local Object
+    cout << "func: something went wrong, calling exit...\n";
+    exit(1);   // terminate: no stack unwinding, no automatic call of ~Obj, violating RAII
 }
 
 int main()
 {
     func();
-    std::cout << "main: end (never reached)\n"; // this functionality of the program is never reached
+    cout << "main: end (never reached)\n"; // this functionality of the program is never reached
 }

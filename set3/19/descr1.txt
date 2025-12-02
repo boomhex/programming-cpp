@@ -1,0 +1,8 @@
+When we create an object of derived class, all of the members of said class
+must be initialized but the inherited members in derived class can only be 
+initialized by the base class constructor. This is why the constructor of base
+class is called first to initialize all the inherited members. 
+
+Since the derived class is constructed on top of the base class, the derived destructor
+is called first, only then is the base destructor called.
+

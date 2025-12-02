@@ -3,5 +3,6 @@
 
 TempFile::~TempFile()
 {
-    destroy();
+    close();
+    remove();
 }

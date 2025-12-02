@@ -1,12 +1,14 @@
-#include "tempfile/tempfile.ih"
+#include "tempfile/tempfile.h"
 #include <iostream>
 #include <filesystem>
+#include <string>
 
 namespace fs = std::filesystem;
+using namespace std;
 
 void throwFun();
 
 inline void throwFun()
 {
-    throw "Throw in throwFun"s;
+    throw std::runtime_error("Generated error\n");
 }

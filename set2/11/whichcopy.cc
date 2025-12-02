@@ -3,5 +3,5 @@
 
 void whichCopy(Obj const &obj)
 {
-    std::cout << "Copy no. " << obj.copyNo() <<'\n';
+    std::cout << "Copy no. " << obj <<'\n';
 }
