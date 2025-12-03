@@ -1,7 +1,7 @@
 The default implementation for the constructor exception safe. Because 
 rawPointer only allocates the memory, then the only exception it can throw is 
-bad_alloc. If that happens it will rollback and never alloced the memory, so 
-it is exception safe.
+bad_alloc. If that happens it will stop and free all allocated memory so far, 
+so it is exception safe.
     
 If the default constructor is called from another constructor and the default 
 constructor throws an exception, then the called constructor throws as well, 
