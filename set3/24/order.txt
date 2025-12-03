@@ -1,4 +1,2 @@
 descr1.txt
 main.cc 
-descr2.cc
-descr3.cc

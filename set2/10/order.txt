@@ -4,5 +4,4 @@ aux.cc
 handleException.h
 handleException.cc
 main.ih
-aux.cc
 main.cc
