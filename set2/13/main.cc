@@ -14,6 +14,5 @@ catch (std::length_error const &lerror)
 }
 catch (...)
 {
-    // Unknown exception: we cannot handle it here → rethrow
-    throw;
+        throw;
 }
