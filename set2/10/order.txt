@@ -1,7 +1,8 @@
 descr1.txt
-aux.h
-aux.cc
-handleException.h
-handleException.cc
+aux/aux.h
+aux/aux.cc
+handle/handleException.h
+handle/handleException.ih
+handle/handleException.cc
 main.ih
 main.cc

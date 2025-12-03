@@ -1,6 +1,6 @@
-#include "handleException.h"
+#include "handleException.ih"
 
-using namespace std;
+
 
 int handleException ()
 try
