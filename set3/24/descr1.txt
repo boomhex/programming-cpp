@@ -1,0 +1,4 @@
+In this example we use an Aux class to create an ostream object with the name specified 
+by the Derived class, which we then pass onto the base class constructor as a reference.
+Since Aux is the first inherited class in Derived's interface, it's constructor is called first, 
+that is why this method works.
