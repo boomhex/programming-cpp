@@ -1,0 +1,4 @@
+descr1.txt
+string2/string2.h
+string2/string2.ih
+string2/string2_ctor.cc

@@ -1,0 +1,5 @@
+String2 is a subclass of std::string that behaves like a normal string but
+adds one extra feature. It provides a constructor that creates a string made
+from several repetitions of another string. All regular std::string features
+remain available. Because of public inheritance, String2 can be used anywhere
+a std::string is expected.
