@@ -1,8 +1,8 @@
 #ifndef MAIN_IH
 #define MAIN_IH
 
-#include "aux.h"
-#include "handleException.h"
+#include "aux/aux.h"
+#include "handle/handleException.h"
 #include <iostream>
 #include <string>
 #include <exception>

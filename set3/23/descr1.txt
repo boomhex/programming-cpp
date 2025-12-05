@@ -1,0 +1,22 @@
+Inheriting a WIP class in some class OpusMagnus causes that OpusMagnus' layout
+contains the complete WIP object. Meaning that changes in WIP, result in any
+applications of OpusMagnus to be recompiled because of a break in ABI. So,
+inheriting from a class that might still be changed causes ABI breakage in any
+inheriting class, when said class is changed. Making the implementation
+extremely coupled.
+
+Using composition (by-value) in the example has the same problem. Since WIP is
+still apart of OpusMagnus' interface, changing data members implementation in 
+WIP still causes ABI breakage in OpusMagnus.
+
+A solution would be to use PIMPL approach covered in block I. Now OpusMagnus'
+layout only stores a pointer to WIP. Changing the implementation of WIP's 
+data members, does not change OpusMagnus' layout, since this remains merely a
+pointer to WIP.
+Example:
+class OpusMagnus
+{
+    WIP *d_wip;
+    ...
+};
+

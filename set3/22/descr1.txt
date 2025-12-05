@@ -1,3 +1,5 @@
+The program defines a base and derived class, showcasing how a caller function
+can take a Base class object, calling the derived class's data member.
 The provided caller function calls hello() from derived, after recasting a Base
 class object to a Derived class. This is unreccommended, since this only works
 when obj really points to a Base class object. Another object will have
