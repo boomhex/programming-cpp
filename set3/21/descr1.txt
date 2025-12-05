@@ -1,0 +1,20 @@
+The reason it is bad practice to inherit string as a base class is because the
+class was never designed to act as a base class. It has no virtual destructor 
+and no virtual interface, which makes polymorphic use unsafe and can lead to 
+undefined behavior when a derived object is deleted through a std::string*. 
+Since the internal implementation of std::string is not meant to be altered, 
+overriding or extending its behavior through inheritance may cause unexpected 
+results and break assumptions relied on by the standard library. Inheriting 
+from std::string also weakens encapsulation by exposing implementation details
+that the class is intended to hide. 
+
+
+
+information from:
+https://www.geeksforgeeks.org/cpp/why-should-we-not-derive-from-cpp-string-class/
+
+
+The String class publicly derives from std::string and adds one extra
+convenience function. It provides an insert member that prepends a given text
+to the existing string content. All standard std::string constructors and
+insert overloads remain available through using declarations.
