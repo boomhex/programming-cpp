@@ -1,0 +1,20 @@
+This program defines two objects base and derived. Where derived inherits from
+base. Base defines a virtual function vHello, outputting "hello from base" to
+its output stream. Derived overrides the same, outputting the string its
+initialised with to the output stream. 
+2 objects message are defined, taking base by reference in the constructor,
+which it uses to initialise its datamember, a reference to a base object.
+Then using Message's member show(), calling Base's hello(), which call the
+virtual functions vHello() are used to display both messages.
+Resulting in the following output:
+hello from Base
+hello from Derived
+
+The program defines one hidden vpointer data member per object, pointing to
+one v_pointer per class. In this program, two classes have a vtable since they
+are polymorophic classes (Base and Derived). Since message takes the objects by
+reference, and there are two objects, no copies, both have one v_pointer,
+pointing to the shared classes's vTable. Creating more objects of either Base
+or Derived, would result in one more v_pointer per object, while the vTables
+stay the same.
+So to conclude, in total: 2 v_pointers, and 2 vTables
