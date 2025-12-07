@@ -1,0 +1,3 @@
+#include "bistreambuffer.h"
+
+#include <ostream>    // <-- this gives the complete std::ostream type
