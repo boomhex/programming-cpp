@@ -8,12 +8,15 @@ class BiStreamBuffer: public std::streambuf
     std::streambuf *d_buf1;
     std::streambuf *d_buf2;
 
-  public:
-    BiStreamBuffer(std::ostream &one, std::ostream &two);
+    public:
+        BiStreamBuffer(std::ostream &one, std::ostream &two);
 
-  protected:
-    int overflow(int ch) override;
-    int sync() override;
+    protected:
+        int overflow(int ch)    override;
+        int sync()             override;
+
+    private:
+        bool bi_eq_int_type(int putReturn1, int putReturn2);
 };
 
 #endif

@@ -3,8 +3,7 @@
 
 BiStream::BiStream(std::ostream &one, std::ostream &two)
 :
-    std::ostream(nullptr),      // base constructed with no buffer yet
-    d_buffer(one, two)          // construct our buffer
+    d_buffer(one, two)
 {
-    rdbuf(&d_buffer);           // install the buffer into the ostream
+    rdbuf(&d_buffer);   // set stream buffer
 }
