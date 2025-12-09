@@ -13,7 +13,10 @@ class Base
         virtual void vHello(std::ostream &out)  const;
 };
 
-inline Base::~Base(){}
+inline Base::~Base()
+{
+    std::cout << "dtor from Base\n";
+}
 
 inline void Base::hello(std::ostream &out)  const
 {

@@ -1,5 +1,4 @@
 #include "bistreambuffer.h"
-
-#include <ostream>    // <-- this gives the complete std::ostream type
+#include <ostream>
 
 using traits = std::streambuf::traits_type;

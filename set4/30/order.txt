@@ -1,0 +1,9 @@
+descr1.txt
+bistream/bistream.h
+bistream/bistream.ih
+bistream/bistream.cc
+bistreambuffer/bistreambuffer.h
+bistreambuffer/bistreambuffer.ih
+bistreambuffer/bistreambuffer.cc
+bistreambuffer/eq_int_type.cc
+main.cc

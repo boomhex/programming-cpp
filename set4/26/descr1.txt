@@ -1,3 +1,4 @@
 This program defines a polymorphic base and derived class, where Derived offers
 a default message. A factory creates an array of Base pointers referring to new
 Derived objects. In main the caller deletes each object and the array itself.
+This is possible due to the virtual destructors.

@@ -7,5 +7,5 @@ int BiStreamBuffer::sync()
     int s2 = d_buf2->pubsync();
 
     int flag = (s1 == 0 and s2 == 0) ? 0 : -1;
-    return flag;
+    return flag;    // return whether syncing went right
 }
