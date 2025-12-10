@@ -1,0 +1,3 @@
+This program defines a custom BiStream class that duplicates its output
+to two separate streams using a BiStreamBuffer. Writing to the BiStream
+object stores the same text in both output files simultaneously.
