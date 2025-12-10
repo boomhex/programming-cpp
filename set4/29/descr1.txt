@@ -1,0 +1,38 @@
+This C++ program demonstrates how multiple inheritance works when two derived 
+classes share the same base class.
+
+The hierarchy of the multi class is:
+   Basic     Basic
+     |         |
+   Deriv1   Deriv2
+        \   /
+        Multi
+
+When compiling the given class, the following error shows up:
+multi/ctor.cc: In constructor 'Multi::Multi()':
+multi/ctor.cc:6:38: error: 'Basic' is an ambiguous base of 'Multi'
+    6 |     cout << static_cast<Basic *>(this) << '\n';
+      |                                      ^
+
+This error is given because the Multi class has 2 Basic subobjects, one from 
+Deriv1 and one from Deriv2. The compiler doesn't know which one you want to 
+cast to, so it is ambiguous.
+
+
+To fix this, there are two almost identical options you can first cast Multi*
+to Deriv1* and then to its Basic subobject or you can first cast Multi* to 
+Deriv2* and then to its Basic subobject.
+
+cout << static_cast<Basic *>(static_cast<Deriv1 *>(this)) << '\n';
+cout << static_cast<Basic *>(static_cast<Deriv2 *>(this)) << '\n';
+
+If you want to only call Basic(int) then you need to add that to the 
+constructor of Multi, in this way whenever you construct a Multi object, it 
+also Constructs a Basic subobject with the second constructor.
+
+If you want Deriv1 and Deriv2 to call Basic(int), then you need to make a 
+constructor that calls Basic(int). Than if you want Multi to only call Basic(),
+then you need to add Basic() to the Multi constructor.
+
+
+

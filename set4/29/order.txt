@@ -1,0 +1,15 @@
+descr1.txt
+basic/basic.h
+basic/basic.ih
+basic/ctor.cc
+basic/ctor2.cc
+deriv1/deriv1.h
+deriv1/deriv1.ih
+deriv1/ctor.cc
+deriv2/deriv2.h
+deriv2/deriv2.ih
+deriv2/ctor.cc
+multi/multi.h
+multi/multi.ih
+multi/ctor.cc
+main.cc
