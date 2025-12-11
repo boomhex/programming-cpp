@@ -1,0 +1,26 @@
+1. The program outputs:
+ 
+pure virtual method called
+terminate called without an active exception
+zsh: abort      ./program`
+
+2. This happens when constructing a Request object, to do so 
+ we also need to construct a Derived object, whose Base sub object is
+ constructed first:
+    
+ d_base(new Derived())
+
+ During the construction of the Derived object,the Base sub object 
+ is therefore constructed before the Derived part. 
+
+ The function Base::Base() is called, and inside it Base::prepare() is called 
+ (in the Base constructor implementation). 
+
+ This further calls v_prepare(), and since the derived object is not 
+ constructed yet the call resolves to Base’s pure virtual v_prepare(), 
+ which has no implementation, causing the runtime error.
+
+3. I would solve this by moving the prepare() function, which calls the 
+ pure virtual function causing the error, out of the constructor into a 
+ function, to ensure that the Derived is properly constructed, and the 
+ v_prepare() call is resolved to Derived::v_prepare() instead of Base::v_prepare().
