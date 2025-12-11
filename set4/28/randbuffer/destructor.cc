@@ -2,5 +2,5 @@
 
 RandBuffer::~RandBuffer()
 {
-  delete[] d_buffer;
+    delete[] d_buffer;
 }
