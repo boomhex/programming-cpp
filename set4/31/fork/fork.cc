@@ -9,15 +9,13 @@ void Fork::fork()
 
     d_pid = pid;
 
-    if (d_pid == 0)                 // child process
+    if (d_pid == 0)
     {
         childProcess();             // implemented by derived class
-
-        // When childProcess() returns, the child must terminate
-        _exit(0);                   // avoid flushing stdio twice
+        _exit(0);
     }
-    else                            // parent process
+    else
     {
-        parentProcess();            // default: does nothing
+        parentProcess();
     }
 }
