@@ -1,0 +1,6 @@
+This exercise defines two classes, Handler and Processor, each of which uses
+the enum Msg internally.
+To avoid duplicating the enum and to keep it accessible only to the members of
+these classes, the enum is placed in a small base class.
+Both classes privately inherit from this base, giving them access to Msg
+without exposing it in their public interfaces.

@@ -1,0 +1,15 @@
+This program implements a custom std::streambuf class named RandBuffer.
+The buffer generates random integral values in the range [min..max], using
+random(3) and a user-supplied seed to initialize the random number generator.
+RandBuffer overrides underflow() to produce the next random value on demand.
+The generated integer is converted to its textual representation and stored in
+a buffer sized exactly to the required number of characters. The get-area of
+the streambuf is then reinitialized to expose this text to extraction
+operations.
+A rejection method is used to avoid bias: values returned by random() that
+are >= the largest multiple of the range (d_end) are discarded. Accepted
+values are mapped into the requested range.
+The class provides only the functions necessary for extraction, allowing a
+std::istream to read random integers as if they originated from a normal
+character stream.
+
