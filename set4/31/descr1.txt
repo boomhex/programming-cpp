@@ -1,0 +1,7 @@
+This program defines an abstract base class Fork that encapsulates the
+common logic of the Unix fork() system call using the Template Method
+design pattern. The class offers a public member fork() that creates a
+child process and then calls parentProcess() in the parent and
+childProcess() in the child. Derived classes override these virtual
+functions to specify the behaviour in each process, while the base class
+handles process creation, PID management and waiting for the child.
