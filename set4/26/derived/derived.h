@@ -1,7 +1,7 @@
 #ifndef _INCLUDED_DERIVED_
 #define _INCLUDED_DERIVED_
 
-#include "base.h"
+#include "../base/base.h"
 #include <string>
 #include <iostream>
 
