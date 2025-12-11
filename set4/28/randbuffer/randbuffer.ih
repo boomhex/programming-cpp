@@ -1,0 +1,12 @@
+#ifndef INCLUDED_RANDBUFFER_IH_
+#define INCLUDED_RANDBUFFER_IH_
+
+#include "randbuffer.h"
+
+#include <string>
+#include <stdexcept>
+#include <cstdlib>
+
+using namespace std;
+
+#endif
