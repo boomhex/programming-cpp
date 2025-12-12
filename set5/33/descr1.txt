@@ -1,0 +1,2 @@
+This program will print an ordered list of its standard input. Using std::set,
+which saves unique elements sorted.
