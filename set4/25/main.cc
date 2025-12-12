@@ -1,7 +1,7 @@
-#include "message.h"
-#include "base.h"   // superfluous since included in message, but since
+#include "message/message.h"
+#include "base/base.h"   // superfluous since included in message, but since
                     // explicitely used here, I like to include it.
-#include "derived.h"
+#include "derived/derived.h"
 
 void show(Base &base)
 {

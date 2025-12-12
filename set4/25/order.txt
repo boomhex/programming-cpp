@@ -1,5 +1,5 @@
 descr1.txt
-base.h
-derived.h
-message.h
+base/base.h
+derived/derived.h
+message/message.h
 main.cc
