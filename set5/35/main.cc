@@ -7,4 +7,6 @@ int main(int argc, char **argv, char **environ)
     // size_t i = argc;
     Strings strings{environ};
     std::cout << strings.size() << '\n';
+    Strings strings2(std::move(strings));
+    std::cout << strings2.size() << '\n';
 }
