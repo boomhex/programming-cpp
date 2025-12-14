@@ -1,0 +1,3 @@
+This program implements the Strings class using a container. Specifically a
+std::vector. Doing this allows to use. The implementation of the container
+class for functions like the dtor, and move assignment etc.

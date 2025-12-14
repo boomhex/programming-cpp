@@ -33,28 +33,9 @@ class Strings
         void fill(char **environlike);
 };
 
-inline void Strings::fill(char **environlike)
-{
-    for (char **begin = environlike, **end = environlike + size();
-          begin != end; ++begin)
-    {
-        d_strings.assign(size(), *begin);
-    }
-}
-
 inline std::string &Strings::at(size_t index)
 {
     return d_strings.at(index);
-}
-
-inline size_t Strings::count(char **environlike)
-{
-    char **ptr = environlike;
-
-    while(*ptr++)
-        ;
-
-    return ptr - environlike - 1;
 }
 
 inline size_t Strings::size()
