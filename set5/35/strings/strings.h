@@ -31,6 +31,7 @@ class Strings
     private:
         size_t count(char **environlike);
         void fill(char **environlike);
+        void add(std::string const &str);
 };
 
 inline std::string &Strings::at(size_t index)

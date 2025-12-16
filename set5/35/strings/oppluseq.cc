@@ -3,6 +3,6 @@
 
 Strings &Strings::operator+=(std::string const &str)
 {
-    d_strings.push_back(str);
+    add(str);
     return *this;
 }
