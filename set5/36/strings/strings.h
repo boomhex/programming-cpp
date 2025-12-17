@@ -36,7 +36,7 @@ class Strings
         void add(std::string const &str);
         void enlarge();
 
-        std::unique_ptr<std::string[]> Strings::rawStrings(std::size_t n);
+        static std::unique_ptr<std::string[]> rawStrings(std::size_t n);
 };
 
 
@@ -54,8 +54,6 @@ inline size_t Strings::capacity()
 {
     return d_cap;
 }
-
-
 
 inline std::string &Strings::operator[](size_t index)
 {

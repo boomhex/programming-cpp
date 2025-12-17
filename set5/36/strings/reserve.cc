@@ -5,7 +5,7 @@ void Strings::reserve(std::size_t nr)
     if (nr <= d_cap)
         return;
 
-    auto tmp = rawStrings(nr);
+    std::unique_ptr<std::string[]> tmp = rawStrings(nr);
 
     for (std::size_t i = 0; i != d_size; ++i)
         tmp[i] = std::move(d_str[i]);   // move strings to new storage
