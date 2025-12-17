@@ -1,14 +1,7 @@
 #include "strings.ih"
 
-void Strings::resize(std::size_t nr)
-{
-    if (nr <= d_size)
-    {
-        d_size = nr;
-        return;
-    }
 
-    reserve(nr);                         // ensure capacity
-    // Elements from d_size..nr-1 are already default-constructed strings.
-    d_size = nr;
+void Strings::resize(size_t num)
+{
+    d_vsp.resize(num);
 }
