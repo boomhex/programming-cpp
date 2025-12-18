@@ -5,3 +5,7 @@ strings/strings1.cc
 strings/strings2.cc
 strings/strings3.cc
 strings/oppluseq.cc
+strings/count.cc
+strings/add.cc
+strings/fill.cc
+strings/at.cc

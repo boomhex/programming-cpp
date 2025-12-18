@@ -46,30 +46,19 @@ inline size_t Strings::size()   const
     return d_vsp.size();
 }
 
-inline void Strings::reserve(size_t num)
-{
-    d_vsp.reserve(num);
-}
-
 inline size_t Strings::capacity()   const
 {
     return d_vsp.capacity();
 }
 
-inline std::string &Strings::operator[](size_t index)
+inline void Strings::resize(size_t size)
 {
-    return at(index);
+    d_vsp.resize(size);
 }
 
-inline std::string const &Strings::operator[](size_t index) const
+inline void Strings::reserve(size_t num)
 {
-    return at(index);
-}
-
-inline Strings &Strings::operator+=(std::string const &str)
-{
-    add(str);
-    return *this;
+    d_vsp.reserve(num);
 }
 
 
