@@ -1,0 +1,10 @@
+This program reads all words from standard input and ensures uniqueness
+by first storing them in a set. The unique words are then copied into a 
+vector, after which an additional word is appended. If there is enough 
+capacity, then the size is +1 and the capacity stays the same else the 
+capacity is doubled and size is still +1.
+
+To remove this excess capacity in a guaranteed manner, the program
+creates a temporary copy of the object and swaps it with the original,
+thereby replacing the oversized storage with a compact one. It
+demonstrates how excess capacity can be shed guaranteed.
