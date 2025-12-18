@@ -1,4 +1,4 @@
 descr1.txt
 words/words.h
 main.ih
-main.h
+main.cc
