@@ -1,0 +1,9 @@
+#include "factory.h"
+
+using namespace std;
+
+// static    by reverse.cc
+inline size_t Factory::min(size_t left, size_t right)
+{
+    return left < right ? left : right;
+}
