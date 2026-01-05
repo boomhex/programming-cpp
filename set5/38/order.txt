@@ -1,0 +1,15 @@
+descr1.txt
+address/address.h
+address/address.ih
+address/operatorinsert.cc
+address/operatorextract.cc
+address/remove.cc
+address/size.cc
+address/processline.cc
+address/trim.cc
+address/extractinfo.cc
+address/extractfrom.cc
+address/insertinto.cc
+address/match.cc
+input.txt
+main.cc

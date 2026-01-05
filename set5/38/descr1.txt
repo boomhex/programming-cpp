@@ -1,0 +1,4 @@
+This program implements an address class that reads addresses from a file, and
+stores them in an unordered map. The class provides insertion and extraction
+operators and removal by providing a prefix of a string. The program has a
+demonstration in the main.cc file.

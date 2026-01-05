@@ -21,7 +21,7 @@ class Address
         std::pair<std::string, std::string>,    
         std::vector<std::string>,               
         PairHash
-        > d_data;                               // vector of strings
+        > d_data;
 
     public:
         friend std::istream &operator>>(std::istream &in, Address &add);
@@ -29,6 +29,7 @@ class Address
 
         Address() = default;
         size_t remove(std::string const &postalCode);
+        size_t size()   const;
 
     private:
         void processLine(std::string const &line);
@@ -39,6 +40,12 @@ class Address
         std::istream &extractFrom(std::istream &in);
         std::ostream &insertInto(std::ostream &out);
         
+        bool match(std::string const &prefix, std::string const &postalCode);
 };
+
+inline size_t Address::size()   const
+{
+    return d_data.size();
+}
 
 #endif
