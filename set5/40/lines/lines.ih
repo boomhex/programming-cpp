@@ -1,0 +1,17 @@
+#include "lines.h"
+#include <iostream>
+
+#include <unordered_map>
+
+using namespace std;
+
+namespace Safe
+{
+    using Vec = vector<string>;
+    using Map = unordered_map<Lines const *, Vec>; 
+    using Order = vector<Lines const *>;       
+
+    extern Map g_lines;                        // stores object with lines
+    extern Order g_order;                      // order of constructed objects
+    extern Vec empty;                          // for empty requests
+}

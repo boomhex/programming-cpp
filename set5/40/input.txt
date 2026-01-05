@@ -1,0 +1,4 @@
+line of obj 1
+
+1st line obj 2
+2nd line obj 2

@@ -1,0 +1,12 @@
+This program implements the Lines class, which reads successive blocks
+of non-empty lines from an input file and associates each block with the
+Lines object constructed from that stream position.
+
+Although Lines objects have no data members, the read lines are stored
+in a shared registry keyed by object identity and construction order.
+This allows an object to return its own lines via get() and the lines
+of the idx-th constructed object via get(idx).
+
+When a Lines object is destroyed, its associated data are removed from
+the registry so later queries return an empty result, ensuring no memory
+leaks.
