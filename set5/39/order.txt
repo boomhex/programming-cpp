@@ -1,0 +1,13 @@
+descr1.txt
+factory/factory.h
+factory/factory.ih
+factory/factory.cc
+factory/put.cc
+factory/reverse.cc
+factory/revert.cc
+train/train.h
+train/train.ih
+train/train.cc
+train/insert.cc
+main.ih
+main.cc

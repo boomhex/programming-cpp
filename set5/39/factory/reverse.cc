@@ -9,7 +9,6 @@ void Factory::reverse(Train &train)
         put(d_rhs,  train.cars(), train.cars().size() - ordered);
         revert(train.cars());
         put(train.cars(), d_rhs,  d_rhs.size());
-
         ordered += order;
     }
 }

@@ -1,0 +1,4 @@
+This program simulates the reordering of train cars using stacks to model a 
+main track, a side track, and the train itself. Cars are processed in batches 
+of limited size on the side track and reattached in reversed order using only 
+stack operations.
