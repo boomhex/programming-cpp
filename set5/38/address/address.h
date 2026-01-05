@@ -24,21 +24,21 @@ class Address
         > d_data;                               // vector of strings
 
     public:
+        friend std::istream &operator>>(std::istream &in, Address &add);
+        friend std::ostream &operator<<(std::ostream &out, Address &add);
+
         Address() = default;
         size_t remove(std::string const &postalCode);
 
     private:
-        void extractFrom(std::istream &in);
         void processLine(std::string const &line);
-
+        void trim(std::string &str)  const;
         std::tuple<std::string, std::string,
             std::string> extractInfo(std::string const &line)  const;
         
+        std::istream &extractFrom(std::istream &in);
         std::ostream &insertInto(std::ostream &out);
-        void trim(std::string &str)  const;
+        
 };
-
-std::istream &operator>>(std::istream &in, Address &add);   // get from file
-std::ostream &operator<<(std::istream &out, Address &add);  // write to file
 
 #endif

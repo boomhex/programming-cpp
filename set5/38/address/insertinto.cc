@@ -8,5 +8,7 @@ ostream &Address::insertInto(ostream &out)
         value.first.second;                    // address
         for (string const &str: value.second) // the people (maybe
             out << "; " << str;               // define a function?)
+        out << '\n';
     }
+    return out;
 }
