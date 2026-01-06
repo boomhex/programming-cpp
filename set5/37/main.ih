@@ -5,3 +5,6 @@
 #include <vector>
 
 using namespace std;
+
+void printWords(vector<string> words);
+void printWords(Words words);
