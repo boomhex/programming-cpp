@@ -8,3 +8,7 @@ To remove this excess capacity in a guaranteed manner, the program
 creates a temporary copy of the object and swaps it with the original,
 thereby replacing the oversized storage with a compact one. It
 demonstrates how excess capacity can be shed guaranteed.
+
+shrink_to_fit() should not be used here because it is non-binding.
+It request to shrink it, but the implementation does not guarantee 
+that it actually shrinks the vector.
