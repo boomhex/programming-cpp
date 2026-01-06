@@ -1,5 +1,4 @@
 descr1.txt
-~input.txt
 lines/lines.h
 lines/lines.ih
 lines/lines.cc
@@ -8,4 +7,5 @@ lines/namespace.cc
 lines/get.cc
 lines/getIndex.cc
 main.ih
+input.txt
 main.cc
