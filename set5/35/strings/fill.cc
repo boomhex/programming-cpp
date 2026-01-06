@@ -3,7 +3,6 @@
 
 void Strings::fill(char **environlike)
 {
-    for (char **begin = environlike, **end = environlike + size();
-          begin != end; ++begin)
-        d_strings.assign(size(), *begin);
+    for (size_t index = 0; index != d_size; ++index)
+        d_strings[index] = environlike[index];
 }

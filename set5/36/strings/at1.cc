@@ -3,6 +3,6 @@
 
 std::string &Strings::at(size_t index)
 {
-    copyIdx(index);                     // COW
+    cow();
     return safeat(index);
 }

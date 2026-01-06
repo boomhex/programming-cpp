@@ -2,12 +2,12 @@
 
 int main()
 {
-    std::set<std::string> words;
-    std::string word;
+    set<string> words;
+    string wordIn;
 
-    while (std::cin >> word)    // read input
-        words.insert(word);
+    while (cin >> wordIn)    // read input
+        words.insert(wordIn);
 
-    for (std::string const &w : words)  // print sorted different words
-        std::cout << w << '\n';
+    for (auto const &word : words)  // print sorted different words
+        cout << word << '\n';
 }

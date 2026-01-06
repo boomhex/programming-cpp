@@ -1,7 +1,7 @@
 #ifndef _INCLUDED_STRINGS_
 #define _INCLUDED_STRINGS_
 
-#include <vector>
+#include <memory>
 #include <string>
 #include <iosfwd>
 #include <exception>
@@ -9,7 +9,9 @@
 
 class Strings
 {
-    std::vector<std::string> d_strings;
+    size_t d_size;
+    size_t d_cap;
+    std::unique_ptr<std::string[]> d_strings;
 
     public:
         Strings();                      // 1.cc
@@ -31,26 +33,17 @@ class Strings
         size_t count(char **environlike);
         void fill(char **environlike);
         void add(std::string const &str);
+        void enlarge();
 };
 
 inline size_t Strings::size()   const
 {
-    return d_strings.size();
+    return d_size;
 }
 
 inline size_t Strings::capacity()   const
 {
-    return d_strings.capacity();
-}
-
-inline void Strings::resize(size_t size)
-{
-    d_strings.resize(size);
-}
-
-inline void Strings::reserve(size_t num)
-{
-    d_strings.reserve(num);
+    return d_cap;
 }
 
 #endif

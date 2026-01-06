@@ -4,7 +4,6 @@ address/address.ih
 address/operatorinsert.cc
 address/operatorextract.cc
 address/remove.cc
-address/size.cc
 address/processline.cc
 address/trim.cc
 address/extractinfo.cc

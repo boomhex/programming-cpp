@@ -14,7 +14,7 @@ int main()
     // output addresses
     std::cout << address;
 
-    std::cout << "After removal of 88---- postal code:\n";
+    std::cout << "After removal of 88 prefixed postal codes:\n";
 
     // remove dummy "88" prefix
     std::cout << "Data size: " << address.remove("88") << '\n';
@@ -27,6 +27,6 @@ int main()
 // 8831ZP; Haarlemmerkade 3; John Doe
 // 0824DL; DisneyStreet 1; Mickey Mouse
 // 8891DD; DuckStreet 13; Donald Duck; Katherine Duck
-// After removal of 88---- postal code:
+// After removal of 88 prefixed postal codes:
 // Data size: 1
 // 0824DL; DisneyStreet 1; Mickey Mouse

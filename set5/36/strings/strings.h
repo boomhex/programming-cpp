@@ -1,7 +1,6 @@
 #ifndef _INCLUDED_STRINGS_
 #define _INCLUDED_STRINGS_
 
-
 #include <memory>
 #include <vector>
 #include <string>
@@ -9,7 +8,9 @@
 
 class Strings
 {
-    std::vector<std::shared_ptr<std::string>> d_vsp;
+    size_t d_size;
+    size_t d_cap;
+    std::shared_ptr<std::string []> d_sp;
 
     public:
         Strings();                      // 1.cc
@@ -34,32 +35,23 @@ class Strings
     private:
         static size_t count(char **environlike);
         void fill(char **environlike);
+        void enlarge();
 
         void add(std::string const &str);
-        void copyIdx(size_t index);     // used for COW
+        void cow();
+        void uniqueCopy(size_t size);
 
         std::string &safeat(size_t index)   const;
 };
 
 inline size_t Strings::size()   const
 {
-    return d_vsp.size();
+    return d_size;
 }
 
 inline size_t Strings::capacity()   const
 {
-    return d_vsp.capacity();
+    return d_cap;
 }
-
-inline void Strings::resize(size_t size)
-{
-    d_vsp.resize(size);
-}
-
-inline void Strings::reserve(size_t num)
-{
-    d_vsp.reserve(num);
-}
-
 
 #endif

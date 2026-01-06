@@ -11,7 +11,6 @@ int main()
                                         // if key not present, it will create
                                         // correctly
 
-    for (map<string, size_t>::iterator it = words.begin();
-            it != words.end(); ++it)
-        cout << it->first << " " << it->second << '\n';
+    for (auto const &[word, count] : words)
+        cout << word << " " << count << '\n';
 }
