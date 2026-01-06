@@ -3,5 +3,5 @@
 
 std::string &Strings::at(size_t index)
 {
-    return d_strings.at(index);
+    return d_strings[index];
 }

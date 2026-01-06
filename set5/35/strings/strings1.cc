@@ -3,5 +3,7 @@
 
 Strings::Strings()
 :
-    d_strings(1)
+    d_size(0),
+    d_cap(1),
+    d_strings(make_unique<string []>(d_cap))
 {}
