@@ -1,0 +1,17 @@
+#include "student/student.h"
+#include <vector>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <numeric>
+#include <algorithm>
+
+using namespace std;
+
+vector<Student> read(char const *fn);
+string lowerStr(string str);
+
+istream &operator>>(istream &in, Student &stu);
+
+void writeNames(ostream &out, vector<Student> const &v);
+void writeNrs(ostream &out, vector<Student> const &v, vector<size_t> const &idx);
