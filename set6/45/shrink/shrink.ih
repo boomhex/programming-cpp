@@ -1,0 +1,5 @@
+#include "shrink.h"
+#include "../timer/timer.h"
+#include <ostream>
+
+using namespace std;

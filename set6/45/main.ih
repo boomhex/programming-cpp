@@ -1,0 +1,4 @@
+#include "shrink/shrink.h"
+#include <iostream>
+
+using namespace std;
