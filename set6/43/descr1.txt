@@ -1,0 +1,1 @@
+Program that counts the number of ducplicates in a vector
