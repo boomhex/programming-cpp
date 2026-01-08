@@ -1,0 +1,4 @@
+Why does moveFails fail?
+Question: why doesn't d_vect.clear() followed by pushing strings into it result
+in extra capacity when process is repeatedly called?
+clear removes elements not cap.
