@@ -3,11 +3,7 @@
 
 void Shrink::moveSwap(vector<string> &vect)
 {
-    vector<string> temp;
-    temp.reserve(vect.size());
-
-    temp.insert(
-        temp.end(),
+    vector<string> temp(
         make_move_iterator(vect.begin()),
         make_move_iterator(vect.end())
     );

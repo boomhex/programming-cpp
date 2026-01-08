@@ -13,5 +13,5 @@ inline size_t Timer::nowMs()
     auto const nowNs = duration_cast<nanoseconds>(
         system_clock::now().time_since_epoch()).count();
 
-    return static_cast<std::size_t>(nowNs / 1'000'000);   // ns -> ms
+    return static_cast<std::size_t>(nowNs / 1'000'000);   // ns to ms
 }

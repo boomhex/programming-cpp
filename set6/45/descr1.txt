@@ -1,4 +1,11 @@
+This program provides a shrink class demonstrating a few functions that shed
+a vector of unused capacity. And a timer class timing each different method.
+
 Why does moveFails fail?
+move(vect) does not create a new vector; it only casts vect to an rvalue
+reference. So move(vect).swap(vect) swaps vect with itself, which does
+nothing and does not shrink capacity.
+
 Question: why doesn't d_vect.clear() followed by pushing strings into it result
 in extra capacity when process is repeatedly called?
-clear removes elements not cap.
+clear removes elements not reserved storage.
