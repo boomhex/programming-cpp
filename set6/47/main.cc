@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main.ih"
 
 // A struct that is used to customize the increment step 
 // used a struct because i did not see the need for any 

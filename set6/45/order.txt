@@ -1,1 +1,11 @@
 descr1.txt
+shrink/shrink.h
+shrink/shrink.ih
+shrink/handmademove.cc
+shrink/movefails.cc
+shrink/moveswap.cc
+shrink/reset.cc
+timer/timer.h
+timer/timer.ih
+main.ih
+main.cc
