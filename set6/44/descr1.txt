@@ -1,0 +1,7 @@
+This program reads a text file containing exam results, where each line
+stores a student’s first name(s), last name, student number, and grade. It
+parses each line into a Student object and stores all records in a vector.
+It then outputs the records sorted alphabetically by last name in a
+case-insensitive way. Finally, it prints the grades and student number 
+sorted by student number using an index vector, so the original student 
+stay sorted on last name.

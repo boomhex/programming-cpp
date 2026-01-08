@@ -1,0 +1,9 @@
+descr1.txt
+student/student.h
+-input.txt
+main.ih
+names.cc
+number.cc
+operator.cc
+read.cc
+main.cc

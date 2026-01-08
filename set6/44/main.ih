@@ -1,4 +1,5 @@
 #include "student/student.h"
+#include <strings.h>
 #include <vector>
 #include <fstream>
 #include <iostream>
@@ -13,5 +14,7 @@ string lowerStr(string str);
 
 istream &operator>>(istream &in, Student &stu);
 
-void writeNames(ostream &out, vector<Student> const &v);
-void writeNrs(ostream &out, vector<Student> const &v, vector<size_t> const &idx);
+void writeNames(ostream &out, vector<Student> const &vec);
+void writeNrs(ostream &out,
+              vector<Student> const &vec,
+              vector<size_t> const &idx);
