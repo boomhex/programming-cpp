@@ -1,0 +1,4 @@
+This program performs a sieve of Eratosthenes to compute prime numbers. It
+displays dots while computing from another thread, and times the computation
+using a timer class. The program reports the start and end time, as well as
+the total amount of seconds the computation took.

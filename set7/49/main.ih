@@ -1,7 +1,15 @@
+#include "timer/timer.h"
 #include <iostream>
 #include <thread>
+#include <vector>
+#include <stop_token>
 
 using namespace std;
 
 void usage();
-void dots();
+void dots(stop_token stop);
+vector<size_t> sieve(size_t amount);
+                                        // check if num is divisble by primes
+bool divisibleBy(size_t num, vector<size_t> const &primes);
+void display(ostream &out, vector<size_t> const &primes);
+

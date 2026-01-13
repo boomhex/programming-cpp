@@ -1,0 +1,13 @@
+descr1.txt
+timer/timer.h
+timer/timer.ih
+timer/timer.cc
+timer/display.cc
+timer/seconds.cc
+timer/checktimed.cc
+main.ih
+usage.cc
+dots.cc
+sieve.cc
+divisibleby.cc
+display.cc
