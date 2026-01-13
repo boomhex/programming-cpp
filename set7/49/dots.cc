@@ -1,10 +1,11 @@
 #include "main.ih"
 
-void dots()
+void dots(stop_token stop)
 {
-    while (true)
+    while (not stop.stop_requested())
     {
-        cerr << "." << flush;
+        cerr << "." << flush;           // flush to immediatly display
         this_thread::sleep_for(chrono::seconds(1));
     }
+    cerr << "\n" << flush;
 }
