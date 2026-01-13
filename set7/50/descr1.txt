@@ -1,0 +1,4 @@
+This program has 2 inputs: hours, seconds. It converts the hours to minutes,
+the results is the exact amount of minutes in the given hours, the seconds 
+are also converted to minutes, this is done by using the 
+chrono::duration_cast(). The however can result in non exact answers.
