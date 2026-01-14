@@ -1,0 +1,3 @@
+This program reads a mail-filter log into an unordered_map keyed by domain.
+It then runs an interactive session filtering entries by date or min count.
+Matching entries are shown, followed by the total number kept.
