@@ -4,3 +4,5 @@
 #include <vector>
 
 using namespace std;
+
+size_t multiples(vector<size_t> const &vs);
