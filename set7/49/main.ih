@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void usage();
+int usage();
 void dots(stop_token stop);
 vector<size_t> sieve(size_t amount);
                                         // check if num is divisble by primes
