@@ -1,5 +1,4 @@
 #include "shrink.ih"
-#include <iterator>
 
 void Shrink::moveSwap(vector<string> &vect)
 {

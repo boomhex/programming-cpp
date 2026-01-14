@@ -3,7 +3,7 @@
 int main(int argc, char **argv)
 {
     if (argc != 2)
-        usage();
+        return usage();
 
     size_t nPrimes = stoull(argv[1]);
 
