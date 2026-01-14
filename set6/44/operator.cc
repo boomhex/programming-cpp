@@ -3,31 +3,42 @@
 istream &operator>>(istream &in, Student &stu)
 {
     string line;
-    if (!getline(in, line))
+    getline(in, line);
+    if (line.empty())
         return in;
 
-    istringstream iss(line);
-    vector<string> tok;
-    string word;
-    while (iss >> word)         // add all words into a vector
-        tok.push_back(word);
-
-    stu.d_grade = stod(tok.back());     // get grade
-    tok.pop_back();
-    stu.d_sNumber = stoull(tok.back()); // get s number
-    tok.pop_back();
-    stu.d_lastName = tok.back();        // get last name
-    tok.pop_back();
-
-    ostringstream os;
-    for (size_t idx = 0; idx != tok.size(); ++idx)
+    auto popLast = [](string &text)
     {
-        if (idx) os << ' '; 
-        os << tok[idx];                 // get all first names
-    }
-    if (!tok.empty()) os << ' ';
-    os << stu.d_lastName;               // add last name to first names
-    stu.d_name = os.str();
+        while (text.back() == ' ' || text.back() == '\t')
+            text.pop_back();
+
+        size_t lastSpacePos = text.find_last_of(" \t");
+        if (lastSpacePos == string::npos)
+        {
+            string lastField = text;
+            text.clear();
+            return lastField;
+        }
+
+        string lastField = text.substr(lastSpacePos + 1);
+        text.erase(lastSpacePos);
+        return lastField;
+    };
+    string gradeText   = popLast(line);
+    string numberText  = popLast(line);
+    string lastName    = popLast(line);
+
+    while (line.back() == ' ' || line.back() == '\t')
+        line.pop_back();
+
+    stu.d_grade    = stod(gradeText);
+    stu.d_sNumber  = stoull(numberText);
+    stu.d_lastName = lastName;
+
+    while (line.front() == ' ' || line.front() == '\t')
+        line.erase(0, 1);
+
+    stu.d_name = line.empty() ? lastName : line + ' ' + lastName;
 
     return in;
 }
