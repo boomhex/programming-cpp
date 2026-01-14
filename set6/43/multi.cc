@@ -2,15 +2,11 @@
 
 size_t multiples(vector<size_t> const &vs)
 {
-    size_t result = 0;
+    vector<size_t> uniq;
+    uniq.reserve(vs.size());        // make unique vector of size vs
 
-    for (auto it = vs.begin(); it != vs.end(); )
-    {
-        //count how many times the current element appears (excluding the first) and add that to the result
-        result += count(it, vs.end(), *it) - 1;
-        //move the iterator to the next different element
-        it = upper_bound(it, vs.end(), *it);
-    }
+    // make a unique copy, only containing unique values
+    unique_copy(vs.begin(), vs.end(), back_inserter(uniq)); 
 
-    return result;
+    return vs.size() - uniq.size();     // this give the nr of multiples
 }
