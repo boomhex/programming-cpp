@@ -1,0 +1,3 @@
+This program uses a handler class to shift a word around on a different thread.
+Once by defining a handler class in main, and once by defining it inside the
+thread, using a function.

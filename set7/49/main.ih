@@ -3,6 +3,7 @@
 #include <thread>
 #include <vector>
 #include <stop_token>
+#include <algorithm>
 
 using namespace std;
 

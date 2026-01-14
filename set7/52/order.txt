@@ -1,0 +1,8 @@
+descr1.txt
+handler/handler.h
+handler/handler.ih
+handler/shift.cc
+main.ih
+usage.cc
+infunc.cc
+main.cc

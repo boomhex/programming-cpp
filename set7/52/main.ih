@@ -2,7 +2,9 @@
 #include <iostream>
 #include <fstream>
 #include <thread>
+#include <functional>
 
 using namespace std;
 
 int usage();
+void inFunc(ostream &out, string const &text);

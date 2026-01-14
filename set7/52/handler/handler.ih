@@ -1,6 +1,8 @@
 #include "handler.h"
 #include <ostream>
+#include <thread>
 #include <string>
+#include <functional>
 
 
 using namespace std;

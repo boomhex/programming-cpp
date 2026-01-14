@@ -6,7 +6,7 @@ vector<size_t> sieve(size_t amount)
 
     if (amount == 1)
         return primeVec;
-    
+
     size_t next = 3;
     while (primeVec.size() < amount)
     {
