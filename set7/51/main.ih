@@ -1,0 +1,9 @@
+#include <chrono>
+#include <ctime>
+#include <iomanip>
+#include <iostream>
+#include <string>
+using namespace std;
+
+chrono::system_clock::duration calcTime(string const &arg);
+void printTimes(time_t time);
