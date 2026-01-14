@@ -1,2 +1,3 @@
 Set: Set 6
-Authors: Timo Jolman, Julian Mounir, Ruben Korbeeck, Teodora Stanca
+Authors: Timo Jolman, Julian Mounir, Ruben Korbeeck
+Rater: HB

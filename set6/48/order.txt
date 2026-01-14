@@ -1,0 +1,12 @@
+descr1.txt
+interactive/interactive.h
+interactive/interactive.ih
+interactive/interactive.cc
+interactive/read.cc
+interactive/session.cc
+interactive/show.cc
+interactive/isnumber.cc
+interactive/isdate.cc
+interactive/operatorinsert.cc
+main.ih
+main.cc

@@ -32,7 +32,6 @@ class Interactive
         void read();
         void session();
     private:
-        void addRecord(Record const &record);    
         void show(FieldsMap const &map);
         bool isNumber(std::string const &string);
         bool isDate(std::string const &string);
