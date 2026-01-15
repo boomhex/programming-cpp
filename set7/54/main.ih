@@ -1,0 +1,9 @@
+#include "storage/storage.h"
+#include <iostream>
+#include <thread>
+#include <string>
+#include <functional>
+
+using namespace std;
+
+void getInput(istream &in, Storage &storage);
