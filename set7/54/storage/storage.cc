@@ -2,7 +2,7 @@
 
 Storage::Storage()
 :
-    d_data(),
-    d_mtx(),
+    d_queue(),
+    d_qmutex(),
     d_finished(false)
 {}

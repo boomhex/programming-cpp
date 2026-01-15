@@ -3,7 +3,9 @@
 #include <thread>
 #include <string>
 #include <functional>
+#include <fstream>
 
 using namespace std;
 
-void getInput(istream &in, Storage &storage);
+void getInput(istream &in, Storage &strg);
+void writeOutput(string const &fileName, Storage &strg);

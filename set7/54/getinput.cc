@@ -1,16 +1,22 @@
 #include "main.ih"
 
-void getInput(istream &in, Storage &storage)
+void getInput(istream &in, Storage &strg)
 {
     string line;
     while (true)
     {
-        if (not getline(cin, line))
-            return;
+        cout << "? ";
 
-        if (line.empty())
+        if (not getline(cin, line))
+        {
+            strg.finished();
             return;
-        
-        storage.push(line);
+        }
+        if (line.empty())
+        {
+            strg.finished();
+            return;
+        }
+        strg.push(line);
     }
 }

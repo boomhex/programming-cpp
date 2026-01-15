@@ -7,16 +7,18 @@
 
 class Storage
 {
-    std::queue<std::string> d_data;
-    mutable std::mutex d_mtx;
+    std::queue<std::string> d_queue;
+    mutable std::mutex d_qmutex;
     bool d_finished;
 
     public:
         Storage();
 
-        std::string const &pop();
+        bool pop(std::string &str);
         std::string const &front();
         void push(std::string string);
+        bool empty()    const;
+        void finished();
 };
 
 #endif
