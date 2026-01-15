@@ -1,0 +1,4 @@
+This program defines a class multihandler, where multiple threads output to 
+cout, where each thread prints 4 lines, interweaving and printing whenever
+they can, while saving one block after they are done processing that they 
+post to the cout stream at once without interruptions.
