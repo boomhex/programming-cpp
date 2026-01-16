@@ -1,0 +1,8 @@
+descr1.txt
+semaphore/semaphore.h
+semaphore/semaphore.ih
+semaphore/semaphore.cc
+semaphore/notify.cc
+semaphore/notify_all.cc
+semaphore/wait.cc
+-main.cc

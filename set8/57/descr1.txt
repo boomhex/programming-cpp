@@ -1,0 +1,5 @@
+The Semaphore class maintains an internal counter representing the number of 
+available permits and uses a mutex plus a condition variable so that wait() 
+blocks whenever the counter is zero. When another thread calls notify() or 
+notify_all(), the counter is incremented and waiting thread(s) are signaled 
+so one thread can re-acquire the mutex, decrement the counter, and continue.
