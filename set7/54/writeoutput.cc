@@ -1,8 +1,9 @@
 #include "main.ih"
 
-void writeOut(string const &fileName, Storage &strg)
+void writeOutput(string const &fileName, Storage &strg)
 {
     ofstream out(fileName);
+
     if (not out)
         throw runtime_error("Could not open file");
 
@@ -10,7 +11,7 @@ void writeOut(string const &fileName, Storage &strg)
     {
         string line;
         if (strg.pop(line))
-            out << line << '\n';
+            out << line << '\n' << flush;
         else
             this_thread::sleep_for(chrono::seconds(1));
     }

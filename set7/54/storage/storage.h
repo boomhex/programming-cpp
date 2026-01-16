@@ -14,8 +14,7 @@ class Storage
     public:
         Storage();
 
-        bool pop(std::string &str);
-        std::string const &front();
+        bool pop(std::string &str);     // changed signature, see descr1.txt
         void push(std::string string);
         bool empty()    const;
         void finished();

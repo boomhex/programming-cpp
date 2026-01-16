@@ -1,0 +1,10 @@
+Main reads lines from stdin and pushes them into a mutex-protected queue.
+A write thread polls every second, pops available lines, and writes to a file.
+A finished flag marks end-of-input; the worker stops when finished and empty.
+
+Changed signature of pop: no front, and pop copies a str into front and
+returns bool. So multiple consumers do not suffer empty ret. true, while
+queue is emptied by other consumer. I also chose not to let front be a
+member, to avoid the situation when a consumer thr1 calls front and then pop,
+while in between thr2 has already popped the element that thr1
+called front on. Now that is protected by putting it under the same lock.

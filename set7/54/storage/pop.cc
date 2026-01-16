@@ -7,7 +7,7 @@ bool Storage::pop(string &str)
     if (d_queue.empty())
         return false;
 
-    str = move(d_queue.front());
+    str = move(d_queue.front());        // avoid copy
     d_queue.pop();
     return true;
 }
