@@ -3,7 +3,6 @@ storage/storage.h
 storage/storage.ih
 storage/storage.cc
 storage/pop.cc
-storage/front.cc
 storage/push.cc
 storage/empty.cc
 storage/finished.cc
