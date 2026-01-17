@@ -1,3 +1,3 @@
 # Do not include json preferences in commit.
 .vscode/*
-
+.DS_Store
