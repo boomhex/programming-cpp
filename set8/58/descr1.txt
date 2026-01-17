@@ -1,0 +1,4 @@
+This program multiplies a 4×5 matrix by a 5×6 matrix by treating the second 
+matrix as already transposed, so each result element is computed as the inner 
+product of one row from the left matrix and one row from the transposed right 
+matrix.
