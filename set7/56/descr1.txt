@@ -1,0 +1,6 @@
+This program reads a text file once per task and counts four character 
+categories: vowels (upper and lower case), digits, hexadecimal digits, and 
+punctuation characters. A TaskThreads controller runs these four Task objects 
+either in parallel using std::thread (default) or sequentially when an extra 
+command-line argument is provided, then prints each count with its label and 
+reports the total runtime.

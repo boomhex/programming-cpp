@@ -1,0 +1,16 @@
+descr1.txt
+task/task.h
+task/task.ih
+task/task.cc
+task/operator.cc
+task/setfile.cc
+taskthreads/taskthreads.h
+taskthreads/taskthreads.ih
+taskthreads/taskthreads.cc
+taskthreads/run.cc
+taskthreads/parallel.cc
+taskthreads/sequentially.cc
+taskthreads/showcount.cc
+taskthreads/showtime.cc
+-input.cc
+main.cc
