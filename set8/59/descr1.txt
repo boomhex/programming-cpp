@@ -1,0 +1,4 @@
+This program uses multithreading for quicksort. Putting one side of quicksort
+on another thread in ecah recursive call. It does not take into account the 
+size of the vector it should sort, since I do not know an exact threshold
+it should use for this. So the outcoming threshold would be a invented number.

@@ -1,0 +1,7 @@
+#include <future>
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+void threadedQsort(int *begin, int *end);
