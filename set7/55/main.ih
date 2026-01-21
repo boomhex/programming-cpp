@@ -1,0 +1,8 @@
+#include "storage/storage.h"
+#include "client/client.h"
+#include <thread>
+#include <iostream>
+
+using namespace std;
+
+void getInput(istream &in, Storage &strg);
