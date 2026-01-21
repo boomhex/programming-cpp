@@ -1,0 +1,5 @@
+This program executes a dummy main task, while waiting on a thread to finish.
+The finishing of the thread indicates to end the program.
+For multiple threads, you can create an array of futures, and start a thread
+per task. Then loop through the array to see whether a thread has indicated
+the program to finish.
