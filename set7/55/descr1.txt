@@ -1,0 +1,3 @@
+This program creates multiple client threads, that each take a filename as
+input and poll the queue. If there is available data, they write it to their
+file. They also keep track of no. of lines they wrote.

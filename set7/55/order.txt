@@ -1,0 +1,8 @@
+descr1.txt
+client/client.h
+client/client.ih
+client/client.cc
+client/operatorcall.cc
+main.ih
+getinput.cc
+main.cc

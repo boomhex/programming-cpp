@@ -7,8 +7,8 @@ int main(int argc, char **argv)
     vector<Client> clients;
     clients.reserve(argc - 1);
 
-    for (int i = 1; i != argc; ++i)
-        clients.emplace_back(storage, argv[i]);
+    for (int index = 1; index != argc; ++index)
+        clients.emplace_back(storage, argv[index]);
 
     // start threads
     vector<thread> threads;
