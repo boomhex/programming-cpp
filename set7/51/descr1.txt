@@ -1,0 +1,3 @@
+this program print the current time in your time zone and in the universal time
+zone, then it takes 1 argument that is an interger with a time unit of s, m or 
+h and it will add that time to the current time. then it prints the time again.

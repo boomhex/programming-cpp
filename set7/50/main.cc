@@ -5,18 +5,17 @@ int main(int argc, char **argv)
     if (argc != 3)
         return 1;
     
-    size_t inputHours = atoi(argv[1]);
-    size_t inputSeconds = atoi(argv[2]);
-    chrono::minutes hourToMin = chrono::hours{inputHours};
-    chrono::minutes secToMin = 
+    const chrono::hours inputHours{stoll(argv[1])};
+    const chrono::seconds inputSeconds{stoll(argv[2])};
+    const chrono::minutes hourToMin = chrono::hours{inputHours};
+    const chrono::minutes secToMin = 
         chrono::duration_cast<chrono::minutes>(
             chrono::seconds{inputSeconds}
         );
     
-
-    cout << inputHours << " hours is " 
+    cout << inputHours.count() << " hours is " 
          << hourToMin.count() << " minutes\n";
-    cout << inputSeconds << " seconds is " 
+    cout << inputSeconds.count() << " seconds is " 
          << secToMin.count() << " minutes\n";
     
 

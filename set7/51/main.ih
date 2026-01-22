@@ -3,7 +3,9 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
-using namespace std;
 
-chrono::system_clock::duration calcTime(string const &arg);
-void printTimes(time_t time);
+using namespace std;
+using namespace std::chrono;
+
+system_clock::duration calcTime(string &arg);
+void printTimes(system_clock::time_point const time);

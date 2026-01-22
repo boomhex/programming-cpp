@@ -1,17 +1,18 @@
 #include "main.ih"
-chrono::system_clock::duration calcTime(string const &arg)
+system_clock::duration calcTime(string &arg)
 {
-    char unit = arg.back();
-    string num = arg.substr(0, arg.size() - 1);
-    int value = stoi(num);
-    switch(unit)
+    const char unit = arg.back();         // get time unit
+    // make the rest of the string an interger
+    const int value = stoi(arg.erase(arg.size() - 1));  
+
+    switch(unit)    // switch to make the interger it respective time duration
     {
     case 's':
-        return chrono::seconds{value};
+        return seconds{value};
     case 'm':
-        return chrono::minutes{value};
+        return minutes{value};
     case 'h':
-        return chrono::hours{value};
+        return hours{value};
     default:
         throw runtime_error("invalid char");
     }
