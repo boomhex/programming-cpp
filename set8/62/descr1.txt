@@ -1,0 +1,44 @@
+1.	Parse arguments and options
+The program reads configuration such as the number of compilation threads (N) and a
+temporary directory location. If the user specifies 0 threads, it is silently
+replaced by 1. The program then constructs the required objects (source provider,
+job queue, compiler configuration, workers).
+2.	Create and manage the temporary directory
+A TempDir object ensures the directory exists (create if missing) and guarantees
+removal at program termination (also when compilation fails). Object files and
+compiler stderr capture files are placed in this directory.
+3.	Discover sources and enqueue compilation work
+A SourceProvider produces source filenames (e.g., from a list file or directory
+traversal). For each source file, the program determines a corresponding object file
+path in the temp directory and creates a compile task. Tasks are pushed into a shared
+TaskQueue.
+4.	Compile concurrently using workers
+N worker threads are started. Each worker repeatedly pops one task from the queue
+and executes it. Each task runs the compiler for exactly one source file and returns
+a CompileResult indicating success or failure, plus captured stderr information.
+5.	Stop
+If any worker observes a failed compilation, it atomically signals a stop flag,
+records the first failure (including the error output location/text), and wakes all
+workers. Remaining queued tasks are not compiled, and workers terminate after they
+notice the stop condition.
+6.	Join workers
+The main thread joins all worker threads. If a failure was recorded, only the error
+output of the first failing compilation is printed. Otherwise, the program reports
+success. Finally, the temp directory is removed by RAII cleanup.
+
+
+Class Hiererarchy:
+
+                Compiler
+                  |
+SourceProvider  +----Task-----------+
+    *d*         |     |             |
+FileSource      +--+---TaskQueue    |
+        |       |              |    |
+        Producer               Worker       TempDirHandler   Options
+            |                    |             |               |
+            +----------+---------+-------------+---------------+
+                       |
+                    main.cc
+
+
