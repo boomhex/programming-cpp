@@ -1,2 +1,3 @@
 Set: Set 7
 Authors: Timo Jolman, Julian Mounir, Ruben Korbeeck
+rater: JB

@@ -12,5 +12,5 @@ taskthreads/parallel.cc
 taskthreads/sequentially.cc
 taskthreads/showcount.cc
 taskthreads/showtime.cc
--input.cc
+-input.txt
 main.cc
