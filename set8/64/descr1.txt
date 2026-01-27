@@ -1,0 +1,9 @@
+This program starts and supervises an external program that prints output at
+fixed intervals. It creates a child process using fork() and starts the
+external program in the child using execl(), while the parent monitors its
+execution. A separate waiter thread waits for the child process to terminate
+and signals the main thread using a semaphore. The main thread waits either
+until the child finishes or until an optional timeout expires, in which case
+the child process is forcibly terminated using kill(2). Before exiting, the
+program joins all threads, reaps the child process, and reports whether the
+program ended normally or due to a timeout.

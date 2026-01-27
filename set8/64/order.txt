@@ -1,0 +1,12 @@
+descr.txt
+semaphore/semaphore.h
+semaphore/semaphore.ih
+-semaphore/semaphore.cc
+-semaphore/notify_all.cc
+-semaphore/notify.cc
+-semaphore/wait.cc
+semaphore/wait_for.cc
+semaphore/set.cc
+tmp/main.cc
+main.ih
+main.cc
