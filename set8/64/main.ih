@@ -1,0 +1,15 @@
+#include <iostream>
+#include <string>
+#include <thread>
+#include <stdexcept>
+#include <cstdlib>
+#include <cerrno>
+
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <signal.h>
+
+#include "semaphore/semaphore.h"
+
+using namespace std;
